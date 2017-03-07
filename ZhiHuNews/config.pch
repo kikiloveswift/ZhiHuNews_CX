@@ -1,0 +1,17 @@
+//
+//  config.pch
+//  ZhiHuNews
+//
+//  Created by konglee on 2017/3/7.
+//  Copyright © 2017年 陈鑫. All rights reserved.
+//
+
+#ifndef config_pch
+#define config_pch
+
+#import "importHeader.h"
+
+#import "defineHeader.h"
+
+
+#endif
