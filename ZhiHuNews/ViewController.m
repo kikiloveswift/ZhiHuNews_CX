@@ -23,8 +23,18 @@
     [super viewDidLoad];
     
     [self initUI];
+    [self testAF];
 }
 
+- (void)testAF
+{
+    http://news-at.zhihu.com/api/4/theme/13
+    [AFRequest requestDataWithUrlString:@"http://news-at.zhihu.com/api/4/theme/13" Parameters:nil Method:@"GET" Proxy:nil Success:^(id result) {
+        NSLog(@"result is %@",result);
+    } Progress:nil Failure:^(id result) {
+        
+    }];
+}
 
 - (void)initUI
 {

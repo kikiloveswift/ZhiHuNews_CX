@@ -13,5 +13,6 @@
 
 #import "defineHeader.h"
 
+#import "Enum.h"
 
 #endif
