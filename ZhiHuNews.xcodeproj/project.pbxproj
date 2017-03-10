@@ -17,6 +17,7 @@
 		FC84B3F11E6EEAB6008FA234 /* ZhiHuNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC84B3F01E6EEAB6008FA234 /* ZhiHuNewsTests.m */; };
 		FC84B3FC1E6EEAB6008FA234 /* ZhiHuNewsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC84B3FB1E6EEAB6008FA234 /* ZhiHuNewsUITests.m */; };
 		FC84B4121E6EF219008FA234 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC84B4111E6EF219008FA234 /* WebKit.framework */; };
+		FC8871191E72CD010000C4A6 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8871181E72CD010000C4A6 /* UIViewExt.m */; };
 		FCC974DD1E7173E300AE9E3F /* HomeViewController+NewsList.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC974DC1E7173E300AE9E3F /* HomeViewController+NewsList.m */; };
 		FCC974E21E71858C00AE9E3F /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC974E01E71858C00AE9E3F /* HomeTableViewCell.m */; };
 		FCC974E31E71858C00AE9E3F /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC974E11E71858C00AE9E3F /* HomeTableViewCell.xib */; };
@@ -82,6 +83,8 @@
 		FC84B40F1E6EF14F008FA234 /* importHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = importHeader.h; sourceTree = "<group>"; };
 		FC84B4101E6EF16A008FA234 /* defineHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defineHeader.h; sourceTree = "<group>"; };
 		FC84B4111E6EF219008FA234 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		FC8871171E72CD010000C4A6 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
+		FC8871181E72CD010000C4A6 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		FCC974DB1E7173E300AE9E3F /* HomeViewController+NewsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeViewController+NewsList.h"; sourceTree = "<group>"; };
 		FCC974DC1E7173E300AE9E3F /* HomeViewController+NewsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeViewController+NewsList.m"; sourceTree = "<group>"; };
 		FCC974DF1E71858C00AE9E3F /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
@@ -283,6 +286,8 @@
 		FC84B40D1E6EF0F1008FA234 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				FC8871171E72CD010000C4A6 /* UIViewExt.h */,
+				FC8871181E72CD010000C4A6 /* UIViewExt.m */,
 				FCF69E921E7117F700C326D6 /* BaseModel.h */,
 				FCF69E931E7117F700C326D6 /* BaseModel.m */,
 				FCF69E951E7118D500C326D6 /* AFRequest.h */,
@@ -590,6 +595,7 @@
 				FCF69E9D1E711D6400C326D6 /* UIView+Controller.m in Sources */,
 				FC84B3D81E6EEAB6008FA234 /* main.m in Sources */,
 				FCC974E21E71858C00AE9E3F /* HomeTableViewCell.m in Sources */,
+				FC8871191E72CD010000C4A6 /* UIViewExt.m in Sources */,
 				FCF69E9A1E711B2F00C326D6 /* JSONData.m in Sources */,
 				FCF69EC41E713AB100C326D6 /* BYListBar.m in Sources */,
 			);

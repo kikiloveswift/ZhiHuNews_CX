@@ -201,6 +201,46 @@
     [self.listBar itemClickByScrollerWithIndex:scrollView.contentOffset.x / self.mainScroller.frame.size.width];
 }
 
+//添加主页视图
+- (void)addUI
+{
+    if (!_mTableView)
+    {
+        _mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 30, kScreenW, kScreenH - kListBarH - 64 - 49) style:UITableViewStylePlain];
+        _mTableView.delegate = self;
+        _mTableView.dataSource = self;
+        [_mTableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"HomeTableViewCell"];
+        //设置默认分割线为无
+        [_mTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+        [_mainScroller addSubview:_mTableView];
+    }
+    if (!_rTableView)
+    {
+        _rTableView = [[UITableView alloc] initWithFrame:CGRectMake(_mTableView.right, 30, kScreenW, kScreenH - kListBarH - 64 - 49) style:UITableViewStylePlain];
+        _rTableView.delegate = self;
+        _rTableView.dataSource = self;
+        [_rTableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"HomeTableViewCell"];
+        //设置默认分割线为无
+        [_rTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+        [_mainScroller addSubview:_rTableView];
+    }
+}
+
+//添加左视图
+- (void)addLeftUI
+{
+    if (!_lTableView)
+    {
+        _lTableView = [[UITableView alloc] initWithFrame:CGRectMake(_mTableView.left - kScreenW, 30, kScreenW, kScreenH - kListBarH - 64 - 49) style:UITableViewStylePlain];
+        _lTableView.delegate = self;
+        _lTableView.dataSource = self;
+        [_lTableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"HomeTableViewCell"];
+        //设置默认分割线为无
+        [_lTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+        [_mainScroller addSubview:_lTableView];
+    }
+}
+
 //点击每个栏目的代理方法
 #pragma Mark-ItemSelected
 - (void)itemClickWith:(NSString *)btnTitle

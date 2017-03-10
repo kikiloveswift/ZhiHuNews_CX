@@ -11,18 +11,39 @@
 
 @implementation HomeViewController (NewsList)
 
-- (void)registerNIB
-{
-    [self.mTableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"HomeTableViewCell"];
-}
 
 - (NSInteger)n_tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    if (tableView == self.mTableView)
+    {
+        return self.dataArrMiddle.count;
+    }
+    else if(tableView == self.lTableView)
+    {
+        return self.dataArrLeft.count;
+    }
+    else if(tableView == self.rTableView)
+    {
+        return self.dataArrRight.count;
+    }
+    return 0;
 }
 
 - (UITableViewCell *)n_tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSArray *dataArr;
+    if (tableView == self.mTableView)
+    {
+        dataArr = self.dataArrMiddle;
+    }
+    else if(tableView == self.lTableView)
+    {
+        dataArr = self.dataArrLeft;
+    }
+    else if(tableView == self.rTableView)
+    {
+        dataArr = self.dataArrRight;
+    }
     HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeTableViewCell"];
     if (cell == nil)
     {

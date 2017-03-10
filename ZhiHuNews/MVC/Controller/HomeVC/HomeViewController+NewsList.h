@@ -10,8 +10,6 @@
 
 @interface HomeViewController (NewsList)
 
-- (void)registerNIB;
-
 - (NSInteger)n_tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 
 - (UITableViewCell *)n_tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;

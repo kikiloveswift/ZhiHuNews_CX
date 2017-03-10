@@ -28,6 +28,35 @@
 
 @implementation HomeViewController (AF)
 
+//请求首页 推荐新闻
+//https://news-at.zhihu.com/api/7/stories/before/20170308?client=0
+//https://news-at.zhihu.com/api/7/stories/latest?client=0
+- (void)requestRecommandAPI:(RecommndData)recommandBlock Params:(NSString *)params
+{
+    
+    NSString *urlString = nil;
+    
+    if (params)
+    {
+        urlString = [NSString stringWithFormat:@"%@/api/7/stories/before/%@?client=0",KURL,params];
+    }
+    else
+    {
+        urlString = [NSString stringWithFormat:@"%@/api/7/stories/latest?client=0",KURL];
+    }
+    [AFRequest requestDataWithUrlString:urlString Parameters:nil Method:@"GET" Proxy:nil Success:^(id result) {
+        if (recommandBlock)
+        {
+            recommandBlock(result);
+        }
+    } Progress:nil Failure:^(id result) {
+        if (recommandBlock)
+        {
+            recommandBlock(nil);
+        }
+    }];
+}
+
 //请求主题接口
 //https://news-at.zhihu.com/api/7/themes
 - (void)requestThemeAPI:(ThemeData)data
@@ -46,9 +75,19 @@
     }];
 }
 
-- (void)requestEveryDetailTheme:(NSString *)theme Data:(ThemeEveryTotalData)dataBlock
+//https://news-at.zhihu.com/api/7/theme/8
+//https://news-at.zhihu.com/api/7/theme/8/before/7082061
+- (void)requestEveryDetailTheme:(NSString *)theme Data:(ThemeEveryTotalData)dataBlock Params:(NSString *)params
 {
-    NSString *urlString = [NSString stringWithFormat:@"%@/api/7/theme/%@",KURL,theme];
+    NSString *urlString = nil;
+    if (params)
+    {
+        urlString = [NSString stringWithFormat:@"%@/api/7/theme/%@/before/%@",KURL,theme,params];
+    }
+    else
+    {
+        urlString = [NSString stringWithFormat:@"%@/api/7/theme/%@",KURL,theme];
+    }
     [AFRequest requestDataWithUrlString:urlString Parameters:nil Method:@"GET" Proxy:nil Success:^(id result) {
         if (dataBlock)
         {

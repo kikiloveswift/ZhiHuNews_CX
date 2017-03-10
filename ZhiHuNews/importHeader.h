@@ -29,5 +29,7 @@
 
 #import "UINavigationController+FDFullscreenPopGesture.h"
 
+#import "UIViewExt.h"
+
 
 #endif 
