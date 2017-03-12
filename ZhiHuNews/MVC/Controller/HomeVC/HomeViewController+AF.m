@@ -42,7 +42,7 @@
     }
     else
     {
-        urlString = [NSString stringWithFormat:@"%@/api/7/stories/latest?client=0",KURL];
+        urlString = [NSString stringWithFormat:@"%@/api/7/stories/latest",KURL];
     }
     [AFRequest requestDataWithUrlString:urlString Parameters:nil Method:@"GET" Proxy:nil Success:^(id result) {
         if (recommandBlock)

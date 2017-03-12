@@ -18,6 +18,14 @@
         {
             self.id_n = [jsonDic objectForKey:@"id"];
         }
+        if ([jsonDic objectForKey:@"images"] && [[jsonDic objectForKey:@"images"] isKindOfClass:[NSArray class]])
+        {
+            NSArray *images = (NSArray *)[jsonDic objectForKey:@"images"];
+            if (images.count > 0)
+            {
+                self.images = images[0];
+            }
+        }
     }
     return self;
 

@@ -41,7 +41,7 @@
             [self.deleteBtn setImage:[UIImage imageNamed:@"delete.png"] forState:0];
             self.deleteBtn.layer.cornerRadius = self.deleteBtn.frame.size.width/2;
             self.deleteBtn.hidden = YES;
-            self.deleteBtn.backgroundColor = UIColorRGB(111.0, 111.0, 111.0, 1);
+            self.deleteBtn.backgroundColor = [UIColor whiteColor];
             [self addSubview:self.deleteBtn];
         }
     }

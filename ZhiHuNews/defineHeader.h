@@ -41,4 +41,8 @@
 #define kItemW (kScreenW-padding*(itemPerLine+1))/itemPerLine
 #define kItemH 25
 
+
+#define kUUID [[[UIDevice currentDevice] identifierForVendor] UUIDString]
+
+
 #endif 

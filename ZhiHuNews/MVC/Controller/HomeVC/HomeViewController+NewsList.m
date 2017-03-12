@@ -49,6 +49,8 @@
     {
         cell = [[NSBundle mainBundle] loadNibNamed:@"HomeTableViewCell" owner:nil options:nil][0];
     }
+    cell.model = dataArr[indexPath.row];
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -56,7 +58,6 @@
 - (void)n_tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     HomeTableViewCell *cell = (HomeTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
-    
     cell.titleLabel.textColor = UIColorRGB(34, 34, 34, 0.498);
 }
 

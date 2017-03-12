@@ -10,7 +10,7 @@
 
 @interface HomeModel_NewsList : BaseModel
 
-@property (nonatomic, copy) NSString *images;
+@property (nonatomic) NSString *images;
 
 @property (nonatomic, strong) NSNumber *type;
 

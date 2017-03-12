@@ -20,6 +20,6 @@ typedef void(^ThemeEveryTotalData)(id obj);
 - (void)requestThemeAPI:(ThemeData)data;
 
 //请求每个主题下面每条数据
-- (void)requestEveryDetailTheme:(NSString *)theme Data:(ThemeEveryTotalData)dataBlock;
+- (void)requestEveryDetailTheme:(NSString *)theme Data:(ThemeEveryTotalData)dataBlock Params:(NSString *)params;
 
 @end

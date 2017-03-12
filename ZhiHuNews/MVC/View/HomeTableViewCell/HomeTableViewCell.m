@@ -14,6 +14,8 @@
 {
     [super awakeFromNib];
     // Initialization code
+    _imgView.layer.cornerRadius = 6.0f;
+    _imgView.layer.masksToBounds = YES;
 }
 
 - (void)setModel:(HomeModel_NewsList *)model
@@ -28,7 +30,16 @@
 - (void)assignUI
 {
     self.titleLabel.text = _model.title;
+    if (self.selected)
+    {
+        self.titleLabel.textColor = UIColorRGB(34, 34, 34, 0.498);
+    }
+    else
+    {
+        self.titleLabel.textColor = UIColorRGB(34, 34, 34, 1);
+    }
     [self.imgView sd_setImageWithURL:[NSURL URLWithString:_model.images] placeholderImage:[UIImage imageNamed:@"wallpaper_profile"]];
+    
 }
 
 

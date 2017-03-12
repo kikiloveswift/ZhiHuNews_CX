@@ -34,24 +34,20 @@
     
     AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
     manger.requestSerializer = [AFHTTPRequestSerializer serializer];
+    [manger.requestSerializer setValue:@"Bearer YEFK46a1Qe2PK8JbTx_CTA" forHTTPHeaderField:@"Authorization"];
+    [manger.requestSerializer setValue:@"com.zhihu.daily" forHTTPHeaderField:@"X-Bundle-ID"];
+//    [manger.requestSerializer setValue:kUUID forHTTPHeaderField:@"X-UUID"];
     if ([string isEqualToString:@"GET"])
     {
-        [manger GET:URLString parameters:dic progress:^(NSProgress * _Nonnull downloadProgress)
-        {
-            if (progressBlock)
-            {
-                progressBlock(downloadProgress);
-            }
-        }
-            success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
+        [manger GET:URLString parameters:dic success:^(NSURLSessionDataTask *task, id responseObject)
         {
             NSDictionary *jsonDic = [JSONData dicWithJsonString:responseObject];
             if (successBlock)
             {
                 successBlock(jsonDic);
             }
-        }
-            failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
+            
+        } failure:^(NSURLSessionDataTask *task, NSError *error)
         {
             if (failureBlock)
             {
@@ -61,27 +57,17 @@
     }
     else if ([string isEqualToString:@"POST"])
     {
-        [manger POST:URLString parameters:dic progress:^(NSProgress * _Nonnull uploadProgress)
-        {
-            if (progressBlock)
-            {
-                progressBlock(uploadProgress);
-            }
-        }
-             success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
-        {
+        [manger POST:URLString parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
             NSDictionary *jsonDic = [JSONData dicWithJsonString:responseObject];
             if (successBlock)
             {
                 successBlock(jsonDic);
             }
-        }
-             failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
-         {
-             if (failureBlock)
-             {
-                 failureBlock(nil);
-             }
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            if (failureBlock)
+            {
+                failureBlock(nil);
+            }
         }];
     }
 }
