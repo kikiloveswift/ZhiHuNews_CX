@@ -10,4 +10,6 @@ target 'ZhiHuNews' do
     pod 'FMDB'
     pod 'SDWebImage'
     pod 'FDFullscreenPopGesture'
+    pod 'WXSDKCoreKit'
+
 end

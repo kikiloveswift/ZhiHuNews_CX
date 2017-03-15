@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		316D3843D957F1B55BD3C985 /* libPods-ZhiHuNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 721858832FD963A7B59D1B50 /* libPods-ZhiHuNews.a */; };
+		FC83D4D11E78D09D00D12AE3 /* HomeScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4D01E78D09D00D12AE3 /* HomeScrollViewController.m */; };
 		FC84B3D81E6EEAB6008FA234 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC84B3D71E6EEAB6008FA234 /* main.m */; };
 		FC84B3DB1E6EEAB6008FA234 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC84B3DA1E6EEAB6008FA234 /* AppDelegate.m */; };
 		FC84B3DE1E6EEAB6008FA234 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC84B3DD1E6EEAB6008FA234 /* ViewController.m */; };
@@ -63,6 +64,9 @@
 		1F4CF411A8513940A570FFDD /* Pods-ZhiHuNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHuNews/Pods-ZhiHuNews.debug.xcconfig"; sourceTree = "<group>"; };
 		721858832FD963A7B59D1B50 /* libPods-ZhiHuNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZhiHuNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEB348A886B5BDBE83667966 /* Pods-ZhiHuNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHuNews/Pods-ZhiHuNews.release.xcconfig"; sourceTree = "<group>"; };
+		FC114D981E78E31A0040A1A7 /* HomePageDidChangeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageDidChangeProtocol.h; sourceTree = "<group>"; };
+		FC83D4CF1E78D09D00D12AE3 /* HomeScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScrollViewController.h; sourceTree = "<group>"; };
+		FC83D4D01E78D09D00D12AE3 /* HomeScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScrollViewController.m; sourceTree = "<group>"; };
 		FC84B3D31E6EEAB6008FA234 /* ZhiHuNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhiHuNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC84B3D71E6EEAB6008FA234 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FC84B3D91E6EEAB6008FA234 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -325,6 +329,9 @@
 				FCF69EC91E714A6200C326D6 /* HomeViewController+AF.m */,
 				FCC974DB1E7173E300AE9E3F /* HomeViewController+NewsList.h */,
 				FCC974DC1E7173E300AE9E3F /* HomeViewController+NewsList.m */,
+				FC83D4CF1E78D09D00D12AE3 /* HomeScrollViewController.h */,
+				FC83D4D01E78D09D00D12AE3 /* HomeScrollViewController.m */,
+				FC114D981E78E31A0040A1A7 /* HomePageDidChangeProtocol.h */,
 			);
 			path = HomeVC;
 			sourceTree = "<group>";
@@ -573,6 +580,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC83D4D11E78D09D00D12AE3 /* HomeScrollViewController.m in Sources */,
 				FCF69EC11E713AB100C326D6 /* BYArrow.m in Sources */,
 				FC84B3DE1E6EEAB6008FA234 /* ViewController.m in Sources */,
 				FCC974DD1E7173E300AE9E3F /* HomeViewController+NewsList.m in Sources */,

@@ -24,7 +24,7 @@
 #define kArrowW 40
 #define kAnimationTime 0.3
 
-@interface HomeViewController () <UIScrollViewDelegate, ItemSelected, UITableViewDelegate, UITableViewDataSource>
+@interface HomeViewController () <UIScrollViewDelegate, ItemSelected, UITableViewDelegate, UITableViewDataSource, HomeScrollViewDelegate>
 {
     MJRefreshHeader *_mjHeader;
     

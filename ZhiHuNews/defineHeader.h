@@ -44,5 +44,7 @@
 
 #define kUUID [[[UIDevice currentDevice] identifierForVendor] UUIDString]
 
+#define WeChatAPPID @"wx0cc7de55902ced91"
+
 
 #endif 

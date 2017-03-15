@@ -8,7 +8,9 @@
 
 #import "RootViewController.h"
 
-@interface HomeViewController : RootViewController
+#import "HomePageDidChangeProtocol.h"
+
+@interface HomeViewController : RootViewController<HomePageDidChangeProtocol>
 
 //主题Arr
 @property (nonatomic, strong) NSArray *themeArr;
