@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "HomeViewController.h"
 
 @interface HomeScrollViewController : RootViewController<UIScrollViewDelegate>
 

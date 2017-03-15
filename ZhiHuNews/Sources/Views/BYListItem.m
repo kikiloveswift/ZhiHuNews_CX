@@ -74,6 +74,10 @@
 -(void)sortButtonClick{
     if (self.location == top){
         self.deleteBtn.hidden = !self.deleteBtn.hidden;
+        if ([self.itemName isEqualToString:@"首页"])
+        {
+            self.deleteBtn.hidden = YES;
+        }
     }
     self.hiddenBtn.hidden = !self.hiddenBtn.hidden;
     if (self.gestureRecognizers) {
@@ -101,6 +105,10 @@
 }
 
 -(void)operationWithoutHidBtn{
+    if ([self.itemName isEqualToString:@"首页"])
+    {
+        return;
+    }
     if (self.location == top){
         [self changeFromTopToBottom];
     }
@@ -112,6 +120,10 @@
 }
 
 - (void)pangestureOperation:(UIPanGestureRecognizer *)pan{
+    if ([self.itemName isEqualToString:@"首页"])
+    {
+        return;
+    }
     [self.superview exchangeSubviewAtIndex:[self.superview.subviews indexOfObject:self] withSubviewAtIndex:[[self.superview subviews] count] - 1];
     CGPoint translation = [pan translationInView:pan.view];
     CGPoint center = pan.view.center;

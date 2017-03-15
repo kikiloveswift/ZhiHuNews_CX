@@ -13,6 +13,7 @@
 
 #import "HomeViewController+NewsList.h"
 #import "HomeModel_NewsList.h"
+#import "HomeScrollViewController.h"
 
 #import "BYListBar.h"
 #import "BYArrow.h"
@@ -484,6 +485,13 @@
     [self n_tableView:tableView didSelectRowAtIndexPath:indexPath];
 //    if (tableView == self.mTableView)
 //    {
+//    }
+}
+
+- (void)initBackScrollView
+{
+//    if (self) {
+//        <#statements#>
 //    }
 }
 

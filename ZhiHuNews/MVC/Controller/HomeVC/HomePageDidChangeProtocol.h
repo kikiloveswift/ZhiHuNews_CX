@@ -29,3 +29,4 @@
 
 @end
 
+typedef id<HomePageDidChangeProtocol> homePageProtocol;
