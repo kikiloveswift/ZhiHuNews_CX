@@ -58,6 +58,9 @@
 @property (nonatomic, strong) UITableView *showTableView;
 
 
+@property (nonatomic, strong) HomeScrollViewController *scrollVC;
+
+
 /**
  当前选中下标
  */
@@ -241,22 +244,33 @@
         [self.view addSubview:self.arrow];
     }
     
-    if (!self.mainScroller)
-    {
-        self.mainScroller = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kListBarH, kScreenW , kScreenH - kListBarH - 64-49)];
-        self.mainScroller.bounces = NO;
-        self.mainScroller.pagingEnabled = YES;
-        self.mainScroller.showsHorizontalScrollIndicator = NO;
-        self.mainScroller.showsVerticalScrollIndicator = NO;
-        self.mainScroller.delegate = self;
-        self.mainScroller.contentSize = CGSizeMake(kScreenW*5,0);
-        [self.view insertSubview:self.mainScroller atIndex:0];
-        
-        [self addUI];
+//    if (!self.mainScroller)
+//    {
+//        self.mainScroller = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kListBarH, kScreenW , kScreenH - kListBarH - 64-49)];
+//        self.mainScroller.bounces = NO;
+//        self.mainScroller.pagingEnabled = YES;
+//        self.mainScroller.showsHorizontalScrollIndicator = NO;
+//        self.mainScroller.showsVerticalScrollIndicator = NO;
+//        self.mainScroller.delegate = self;
+//        self.mainScroller.contentSize = CGSizeMake(kScreenW*5,0);
+//        [self.view insertSubview:self.mainScroller atIndex:0];
+    
+//        [self addUI];
 
 //        [self addScrollViewWithItemName:@"推荐" index:0];
 //        [self addScrollViewWithItemName:@"测试" index:1];
+//    }
+    
+    //初始化HomeScrollViewVC
+    if (!self.scrollVC)
+    {
+        self.scrollVC = [[HomeScrollViewController alloc] init];
+        [self addChildViewController:_scrollVC];
+        self.scrollVC.view.frame = self.view.bounds;
+        [self.view insertSubview:self.scrollVC.view belowSubview:self.listBar];
+        _scrollVC.view.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     }
+    [self addUI];
 }
 
 -(void)addScrollViewWithItemName:(NSString *)itemName index:(NSInteger)index
@@ -279,7 +293,7 @@
 {
     if (!_mTableView)
     {
-        _mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH - kListBarH - 64 - 49) style:UITableViewStylePlain];
+        _mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 30, kScreenW, kScreenH - 94 - 49) style:UITableViewStylePlain];
         _mTableView.delegate = self;
         _mTableView.dataSource = self;
         _mTableView.backgroundColor = UIColorHEX(0xDFDFDF, 1);
@@ -289,26 +303,26 @@
         [_mTableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"HomeTableViewCell"];
         //设置默认分割线为无
         [_mTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-        [_mainScroller addSubview:_mTableView];
+        [self.view addSubview:_mTableView];
         _mTableView.mj_footer = [MJRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
         _mTableView.mj_header = [MJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(pullToRefresh)];
     }
-    if (!_rTableView)
-    {
-        _rTableView = [[UITableView alloc] initWithFrame:CGRectMake(_mTableView.right, 0, kScreenW, kScreenH - kListBarH - 64 - 49) style:UITableViewStylePlain];
-        _rTableView.delegate = self;
-        _rTableView.dataSource = self;
-        _rTableView.backgroundColor = UIColorHEX(0xDFDFDF, 1);
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, 150)];
-        imgView.image = [UIImage imageNamed:@"wallpaper_profile"];
-        [_rTableView.backgroundView addSubview:imgView];
-        [_rTableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"HomeTableViewCell"];
-        //设置默认分割线为无
-        [_rTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-        [_mainScroller addSubview:_rTableView];
-        _rTableView.mj_footer = [MJRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-        _rTableView.mj_header = [MJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(pullToRefresh)];
-    }
+//    if (!_rTableView)
+//    {
+//        _rTableView = [[UITableView alloc] initWithFrame:CGRectMake(_mTableView.right, 0, kScreenW, kScreenH - kListBarH - 64 - 49) style:UITableViewStylePlain];
+//        _rTableView.delegate = self;
+//        _rTableView.dataSource = self;
+//        _rTableView.backgroundColor = UIColorHEX(0xDFDFDF, 1);
+//        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, 150)];
+//        imgView.image = [UIImage imageNamed:@"wallpaper_profile"];
+//        [_rTableView.backgroundView addSubview:imgView];
+//        [_rTableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"HomeTableViewCell"];
+//        //设置默认分割线为无
+//        [_rTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+//        [_mainScroller addSubview:_rTableView];
+//        _rTableView.mj_footer = [MJRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+//        _rTableView.mj_header = [MJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(pullToRefresh)];
+//    }
 }
 
 //TODO: 添加左视图

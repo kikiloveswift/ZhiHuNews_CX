@@ -52,6 +52,7 @@
 //    _webView.UIDelegate = self;
 //    NSString *jsString = @"localStorage.setItem('hideDownloadBanner', 'true')";
 //    [_webView evaluateJavaScript:jsString completionHandler:nil];
+    [_webView.scrollView sizeToFit];
     [self.view addSubview:_webView];
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];

@@ -9,12 +9,17 @@
 #import "RootViewController.h"
 #import "HomeViewController.h"
 
+@protocol HomeScrollViewControllerDelegate <NSObject>
+
+- (void)homePageDidScroll:(UIScrollView *)scrollView;
+
+@end
+
 @interface HomeScrollViewController : RootViewController<UIScrollViewDelegate>
 
-@property (nonatomic, weak) UIScrollView *scrollView;
+@property (nonatomic, strong) UIScrollView *scrollView;
 
-
-
+@property (nonatomic, weak) id<HomeScrollViewControllerDelegate> controllDelegate;
 
 
 @end
