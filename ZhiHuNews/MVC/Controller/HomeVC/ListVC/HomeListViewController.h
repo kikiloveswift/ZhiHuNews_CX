@@ -1,5 +1,5 @@
 //
-//  HomeViewController.h
+//  HomeListViewController.h
 //  ZhiHuNews
 //
 //  Created by konglee on 2017/3/9.
@@ -7,10 +7,9 @@
 //
 
 #import "RootViewController.h"
-
 #import "HomePageDidChangeProtocol.h"
 
-@interface HomeViewController : RootViewController<HomePageDidChangeProtocol>
+@interface HomeListViewController : RootViewController<HomePageDidChangeProtocol>
 
 //主题Arr
 @property (nonatomic, strong) NSArray *themeArr;
@@ -34,5 +33,7 @@
 
 //右tableView数据源
 @property (nonatomic, strong) NSArray *dataArrRight;
+
+@property (nonatomic, weak) id<HomeScrollViewDelegate> scrollDelegate;
 
 @end

@@ -24,7 +24,7 @@
 /**
  控制器的HomeVC的View
  */
-@property (nonatomic, readonly) UIView *hView;
+@property (nonatomic, readonly) UIView *view;
 
 
 @end

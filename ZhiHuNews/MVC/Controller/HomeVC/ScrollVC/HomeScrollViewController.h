@@ -7,7 +7,8 @@
 //
 
 #import "RootViewController.h"
-#import "HomeViewController.h"
+#import "HomeListViewController.h"
+#import "HomePageDidChangeProtocol.h"
 
 @protocol HomeScrollViewControllerDelegate <NSObject>
 
@@ -20,6 +21,10 @@
 @property (nonatomic, strong) UIScrollView *scrollView;
 
 @property (nonatomic, weak) id<HomeScrollViewControllerDelegate> controllDelegate;
+
+@property (nonatomic, assign) NSInteger themeCount;
+
+
 
 
 @end

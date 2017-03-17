@@ -31,5 +31,8 @@
 
 #import "UIViewExt.h"
 
+#import "BaseMJAutoFooter.h"
+
+#import "BaseMJAutoHeader.h"
 
 #endif 

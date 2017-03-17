@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		316D3843D957F1B55BD3C985 /* libPods-ZhiHuNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 721858832FD963A7B59D1B50 /* libPods-ZhiHuNews.a */; };
-		FC83D4D11E78D09D00D12AE3 /* HomeScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC83D4D01E78D09D00D12AE3 /* HomeScrollViewController.m */; };
+		FC6060FA1E7BDEEC003AA117 /* BaseMJAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6060F91E7BDEEC003AA117 /* BaseMJAutoFooter.m */; };
+		FC6060FD1E7BE0F2003AA117 /* BaseMJAutoHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6060FC1E7BE0F2003AA117 /* BaseMJAutoHeader.m */; };
 		FC84B3D81E6EEAB6008FA234 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC84B3D71E6EEAB6008FA234 /* main.m */; };
 		FC84B3DB1E6EEAB6008FA234 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC84B3DA1E6EEAB6008FA234 /* AppDelegate.m */; };
 		FC84B3DE1E6EEAB6008FA234 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC84B3DD1E6EEAB6008FA234 /* ViewController.m */; };
@@ -19,7 +20,13 @@
 		FC84B3FC1E6EEAB6008FA234 /* ZhiHuNewsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC84B3FB1E6EEAB6008FA234 /* ZhiHuNewsUITests.m */; };
 		FC84B4121E6EF219008FA234 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC84B4111E6EF219008FA234 /* WebKit.framework */; };
 		FC8871191E72CD010000C4A6 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8871181E72CD010000C4A6 /* UIViewExt.m */; };
-		FCC974DD1E7173E300AE9E3F /* HomeViewController+NewsList.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC974DC1E7173E300AE9E3F /* HomeViewController+NewsList.m */; };
+		FCB2AFB81E7B7ADD00C792BF /* HomeListViewController+AF.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB2AFAE1E7B7ADD00C792BF /* HomeListViewController+AF.m */; };
+		FCB2AFB91E7B7ADD00C792BF /* HomeListViewController+NewsList.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB2AFB01E7B7ADD00C792BF /* HomeListViewController+NewsList.m */; };
+		FCB2AFBA1E7B7ADD00C792BF /* HomeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB2AFB21E7B7ADD00C792BF /* HomeListViewController.m */; };
+		FCB2AFBB1E7B7ADD00C792BF /* HomeScrollViewController+AF.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB2AFB51E7B7ADD00C792BF /* HomeScrollViewController+AF.m */; };
+		FCB2AFBC1E7B7ADD00C792BF /* HomeScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB2AFB71E7B7ADD00C792BF /* HomeScrollViewController.m */; };
+		FCB2AFBF1E7B7B0800C792BF /* HomeRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB2AFBE1E7B7B0800C792BF /* HomeRootViewController.m */; };
+		FCB2AFC21E7B7B4600C792BF /* HomeRootViewController+AF.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB2AFC11E7B7B4600C792BF /* HomeRootViewController+AF.m */; };
 		FCC974E21E71858C00AE9E3F /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC974E01E71858C00AE9E3F /* HomeTableViewCell.m */; };
 		FCC974E31E71858C00AE9E3F /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC974E11E71858C00AE9E3F /* HomeTableViewCell.xib */; };
 		FCC974E61E7189E900AE9E3F /* HomeModel_NewsList.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC974E51E7189E900AE9E3F /* HomeModel_NewsList.m */; };
@@ -28,7 +35,6 @@
 		FCF69E9A1E711B2F00C326D6 /* JSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF69E991E711B2F00C326D6 /* JSONData.m */; };
 		FCF69E9D1E711D6400C326D6 /* UIView+Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF69E9C1E711D6400C326D6 /* UIView+Controller.m */; };
 		FCF69EA01E71290000C326D6 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF69E9F1E71290000C326D6 /* RootViewController.m */; };
-		FCF69EA41E7129D700C326D6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF69EA31E7129D700C326D6 /* HomeViewController.m */; };
 		FCF69EA71E712D0300C326D6 /* RootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF69EA61E712D0300C326D6 /* RootTabBarController.m */; };
 		FCF69EAA1E712D2100C326D6 /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF69EA91E712D2100C326D6 /* RootNavigationController.m */; };
 		FCF69EAF1E7136CF00C326D6 /* FavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF69EAE1E7136CF00C326D6 /* FavViewController.m */; };
@@ -39,7 +45,6 @@
 		FCF69EC41E713AB100C326D6 /* BYListBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF69EBC1E713AB100C326D6 /* BYListBar.m */; };
 		FCF69EC51E713AB100C326D6 /* BYListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF69EBE1E713AB100C326D6 /* BYListItem.m */; };
 		FCF69EC61E713AB100C326D6 /* BYScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF69EC01E713AB100C326D6 /* BYScroller.m */; };
-		FCF69ECA1E714A6200C326D6 /* HomeViewController+AF.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF69EC91E714A6200C326D6 /* HomeViewController+AF.m */; };
 		FCF69ECE1E714EAE00C326D6 /* HomeModel_Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF69ECD1E714EAE00C326D6 /* HomeModel_Theme.m */; };
 /* End PBXBuildFile section */
 
@@ -65,8 +70,10 @@
 		721858832FD963A7B59D1B50 /* libPods-ZhiHuNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZhiHuNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEB348A886B5BDBE83667966 /* Pods-ZhiHuNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHuNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHuNews/Pods-ZhiHuNews.release.xcconfig"; sourceTree = "<group>"; };
 		FC114D981E78E31A0040A1A7 /* HomePageDidChangeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageDidChangeProtocol.h; sourceTree = "<group>"; };
-		FC83D4CF1E78D09D00D12AE3 /* HomeScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScrollViewController.h; sourceTree = "<group>"; };
-		FC83D4D01E78D09D00D12AE3 /* HomeScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScrollViewController.m; sourceTree = "<group>"; };
+		FC6060F81E7BDEEC003AA117 /* BaseMJAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMJAutoFooter.h; sourceTree = "<group>"; };
+		FC6060F91E7BDEEC003AA117 /* BaseMJAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMJAutoFooter.m; sourceTree = "<group>"; };
+		FC6060FB1E7BE0F2003AA117 /* BaseMJAutoHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMJAutoHeader.h; sourceTree = "<group>"; };
+		FC6060FC1E7BE0F2003AA117 /* BaseMJAutoHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMJAutoHeader.m; sourceTree = "<group>"; };
 		FC84B3D31E6EEAB6008FA234 /* ZhiHuNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhiHuNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC84B3D71E6EEAB6008FA234 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FC84B3D91E6EEAB6008FA234 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -89,8 +96,20 @@
 		FC84B4111E6EF219008FA234 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		FC8871171E72CD010000C4A6 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
 		FC8871181E72CD010000C4A6 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
-		FCC974DB1E7173E300AE9E3F /* HomeViewController+NewsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeViewController+NewsList.h"; sourceTree = "<group>"; };
-		FCC974DC1E7173E300AE9E3F /* HomeViewController+NewsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeViewController+NewsList.m"; sourceTree = "<group>"; };
+		FCB2AFAD1E7B7ADD00C792BF /* HomeListViewController+AF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeListViewController+AF.h"; sourceTree = "<group>"; };
+		FCB2AFAE1E7B7ADD00C792BF /* HomeListViewController+AF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeListViewController+AF.m"; sourceTree = "<group>"; };
+		FCB2AFAF1E7B7ADD00C792BF /* HomeListViewController+NewsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeListViewController+NewsList.h"; sourceTree = "<group>"; };
+		FCB2AFB01E7B7ADD00C792BF /* HomeListViewController+NewsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeListViewController+NewsList.m"; sourceTree = "<group>"; };
+		FCB2AFB11E7B7ADD00C792BF /* HomeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeListViewController.h; sourceTree = "<group>"; };
+		FCB2AFB21E7B7ADD00C792BF /* HomeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeListViewController.m; sourceTree = "<group>"; };
+		FCB2AFB41E7B7ADD00C792BF /* HomeScrollViewController+AF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeScrollViewController+AF.h"; sourceTree = "<group>"; };
+		FCB2AFB51E7B7ADD00C792BF /* HomeScrollViewController+AF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeScrollViewController+AF.m"; sourceTree = "<group>"; };
+		FCB2AFB61E7B7ADD00C792BF /* HomeScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScrollViewController.h; sourceTree = "<group>"; };
+		FCB2AFB71E7B7ADD00C792BF /* HomeScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScrollViewController.m; sourceTree = "<group>"; };
+		FCB2AFBD1E7B7B0800C792BF /* HomeRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeRootViewController.h; sourceTree = "<group>"; };
+		FCB2AFBE1E7B7B0800C792BF /* HomeRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeRootViewController.m; sourceTree = "<group>"; };
+		FCB2AFC01E7B7B4600C792BF /* HomeRootViewController+AF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeRootViewController+AF.h"; sourceTree = "<group>"; };
+		FCB2AFC11E7B7B4600C792BF /* HomeRootViewController+AF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeRootViewController+AF.m"; sourceTree = "<group>"; };
 		FCC974DF1E71858C00AE9E3F /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		FCC974E01E71858C00AE9E3F /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		FCC974E11E71858C00AE9E3F /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -106,8 +125,6 @@
 		FCF69E9C1E711D6400C326D6 /* UIView+Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Controller.m"; sourceTree = "<group>"; };
 		FCF69E9E1E71290000C326D6 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		FCF69E9F1E71290000C326D6 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		FCF69EA21E7129D700C326D6 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		FCF69EA31E7129D700C326D6 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		FCF69EA51E712D0300C326D6 /* RootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabBarController.h; sourceTree = "<group>"; };
 		FCF69EA61E712D0300C326D6 /* RootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTabBarController.m; sourceTree = "<group>"; };
 		FCF69EA81E712D2100C326D6 /* RootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootNavigationController.h; sourceTree = "<group>"; };
@@ -129,8 +146,6 @@
 		FCF69EBF1E713AB100C326D6 /* BYScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYScroller.h; sourceTree = "<group>"; };
 		FCF69EC01E713AB100C326D6 /* BYScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYScroller.m; sourceTree = "<group>"; };
 		FCF69EC71E713B8C00C326D6 /* Enum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enum.h; sourceTree = "<group>"; };
-		FCF69EC81E714A6200C326D6 /* HomeViewController+AF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeViewController+AF.h"; sourceTree = "<group>"; };
-		FCF69EC91E714A6200C326D6 /* HomeViewController+AF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeViewController+AF.m"; sourceTree = "<group>"; };
 		FCF69ECC1E714EAE00C326D6 /* HomeModel_Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel_Theme.h; sourceTree = "<group>"; };
 		FCF69ECD1E714EAE00C326D6 /* HomeModel_Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel_Theme.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -306,8 +321,47 @@
 				FCF69EA61E712D0300C326D6 /* RootTabBarController.m */,
 				FCF69EA81E712D2100C326D6 /* RootNavigationController.h */,
 				FCF69EA91E712D2100C326D6 /* RootNavigationController.m */,
+				FC6060F81E7BDEEC003AA117 /* BaseMJAutoFooter.h */,
+				FC6060F91E7BDEEC003AA117 /* BaseMJAutoFooter.m */,
+				FC6060FB1E7BE0F2003AA117 /* BaseMJAutoHeader.h */,
+				FC6060FC1E7BE0F2003AA117 /* BaseMJAutoHeader.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		FCB2AFAB1E7B7ADD00C792BF /* BottomVC */ = {
+			isa = PBXGroup;
+			children = (
+				FCB2AFBD1E7B7B0800C792BF /* HomeRootViewController.h */,
+				FCB2AFBE1E7B7B0800C792BF /* HomeRootViewController.m */,
+				FCB2AFC01E7B7B4600C792BF /* HomeRootViewController+AF.h */,
+				FCB2AFC11E7B7B4600C792BF /* HomeRootViewController+AF.m */,
+			);
+			path = BottomVC;
+			sourceTree = "<group>";
+		};
+		FCB2AFAC1E7B7ADD00C792BF /* ListVC */ = {
+			isa = PBXGroup;
+			children = (
+				FCB2AFAD1E7B7ADD00C792BF /* HomeListViewController+AF.h */,
+				FCB2AFAE1E7B7ADD00C792BF /* HomeListViewController+AF.m */,
+				FCB2AFAF1E7B7ADD00C792BF /* HomeListViewController+NewsList.h */,
+				FCB2AFB01E7B7ADD00C792BF /* HomeListViewController+NewsList.m */,
+				FCB2AFB11E7B7ADD00C792BF /* HomeListViewController.h */,
+				FCB2AFB21E7B7ADD00C792BF /* HomeListViewController.m */,
+			);
+			path = ListVC;
+			sourceTree = "<group>";
+		};
+		FCB2AFB31E7B7ADD00C792BF /* ScrollVC */ = {
+			isa = PBXGroup;
+			children = (
+				FCB2AFB41E7B7ADD00C792BF /* HomeScrollViewController+AF.h */,
+				FCB2AFB51E7B7ADD00C792BF /* HomeScrollViewController+AF.m */,
+				FCB2AFB61E7B7ADD00C792BF /* HomeScrollViewController.h */,
+				FCB2AFB71E7B7ADD00C792BF /* HomeScrollViewController.m */,
+			);
+			path = ScrollVC;
 			sourceTree = "<group>";
 		};
 		FCC974DE1E71857300AE9E3F /* HomeTableViewCell */ = {
@@ -323,14 +377,9 @@
 		FCF69EA11E7129C900C326D6 /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
-				FCF69EA21E7129D700C326D6 /* HomeViewController.h */,
-				FCF69EA31E7129D700C326D6 /* HomeViewController.m */,
-				FCF69EC81E714A6200C326D6 /* HomeViewController+AF.h */,
-				FCF69EC91E714A6200C326D6 /* HomeViewController+AF.m */,
-				FCC974DB1E7173E300AE9E3F /* HomeViewController+NewsList.h */,
-				FCC974DC1E7173E300AE9E3F /* HomeViewController+NewsList.m */,
-				FC83D4CF1E78D09D00D12AE3 /* HomeScrollViewController.h */,
-				FC83D4D01E78D09D00D12AE3 /* HomeScrollViewController.m */,
+				FCB2AFAB1E7B7ADD00C792BF /* BottomVC */,
+				FCB2AFAC1E7B7ADD00C792BF /* ListVC */,
+				FCB2AFB31E7B7ADD00C792BF /* ScrollVC */,
 				FC114D981E78E31A0040A1A7 /* HomePageDidChangeProtocol.h */,
 			);
 			path = HomeVC;
@@ -462,7 +511,7 @@
 				TargetAttributes = {
 					FC84B3D21E6EEAB6008FA234 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 628LRYYF8F;
+						DevelopmentTeam = W7UTU6SPHU;
 						ProvisioningStyle = Automatic;
 					};
 					FC84B3EB1E6EEAB6008FA234 = {
@@ -580,29 +629,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC83D4D11E78D09D00D12AE3 /* HomeScrollViewController.m in Sources */,
 				FCF69EC11E713AB100C326D6 /* BYArrow.m in Sources */,
 				FC84B3DE1E6EEAB6008FA234 /* ViewController.m in Sources */,
-				FCC974DD1E7173E300AE9E3F /* HomeViewController+NewsList.m in Sources */,
 				FCF69ECE1E714EAE00C326D6 /* HomeModel_Theme.m in Sources */,
+				FCB2AFBF1E7B7B0800C792BF /* HomeRootViewController.m in Sources */,
 				FCF69EC21E713AB100C326D6 /* BYDeleteBar.m in Sources */,
 				FCF69EC61E713AB100C326D6 /* BYScroller.m in Sources */,
-				FCF69ECA1E714A6200C326D6 /* HomeViewController+AF.m in Sources */,
 				FCF69EA71E712D0300C326D6 /* RootTabBarController.m in Sources */,
+				FCB2AFC21E7B7B4600C792BF /* HomeRootViewController+AF.m in Sources */,
 				FCF69EB21E7136E100C326D6 /* MineViewController.m in Sources */,
 				FCC974E61E7189E900AE9E3F /* HomeModel_NewsList.m in Sources */,
 				FCF69EAF1E7136CF00C326D6 /* FavViewController.m in Sources */,
 				FC84B3DB1E6EEAB6008FA234 /* AppDelegate.m in Sources */,
 				FCF69EC31E713AB100C326D6 /* BYDetailsList.m in Sources */,
+				FC6060FD1E7BE0F2003AA117 /* BaseMJAutoHeader.m in Sources */,
+				FCB2AFBB1E7B7ADD00C792BF /* HomeScrollViewController+AF.m in Sources */,
 				FCF69EA01E71290000C326D6 /* RootViewController.m in Sources */,
 				FCF69E971E7118D500C326D6 /* AFRequest.m in Sources */,
+				FCB2AFBC1E7B7ADD00C792BF /* HomeScrollViewController.m in Sources */,
+				FC6060FA1E7BDEEC003AA117 /* BaseMJAutoFooter.m in Sources */,
 				FCF69EAA1E712D2100C326D6 /* RootNavigationController.m in Sources */,
 				FCF69EC51E713AB100C326D6 /* BYListItem.m in Sources */,
 				FCF69E941E7117F700C326D6 /* BaseModel.m in Sources */,
-				FCF69EA41E7129D700C326D6 /* HomeViewController.m in Sources */,
 				FCF69E9D1E711D6400C326D6 /* UIView+Controller.m in Sources */,
 				FC84B3D81E6EEAB6008FA234 /* main.m in Sources */,
 				FCC974E21E71858C00AE9E3F /* HomeTableViewCell.m in Sources */,
+				FCB2AFB81E7B7ADD00C792BF /* HomeListViewController+AF.m in Sources */,
+				FCB2AFB91E7B7ADD00C792BF /* HomeListViewController+NewsList.m in Sources */,
+				FCB2AFBA1E7B7ADD00C792BF /* HomeListViewController.m in Sources */,
 				FC8871191E72CD010000C4A6 /* UIViewExt.m in Sources */,
 				FCF69E9A1E711B2F00C326D6 /* JSONData.m in Sources */,
 				FCF69EC41E713AB100C326D6 /* BYListBar.m in Sources */,
@@ -753,12 +807,13 @@
 			baseConfigurationReference = 1F4CF411A8513940A570FFDD /* Pods-ZhiHuNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 628LRYYF8F;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = W7UTU6SPHU;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ZhiHuNews/config.pch";
 				INFOPLIST_FILE = ZhiHuNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = kong.ZhiHuNews;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kong.ZhiHuNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -768,12 +823,13 @@
 			baseConfigurationReference = EEB348A886B5BDBE83667966 /* Pods-ZhiHuNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 628LRYYF8F;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = W7UTU6SPHU;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ZhiHuNews/config.pch";
 				INFOPLIST_FILE = ZhiHuNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = kong.ZhiHuNews;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kong.ZhiHuNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

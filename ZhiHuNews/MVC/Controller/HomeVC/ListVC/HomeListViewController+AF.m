@@ -1,5 +1,5 @@
 //
-//  HomeViewController+AF.m
+//  HomeListViewController+AF.m
 //  ZhiHuNews
 //
 //  Created by konglee on 2017/3/9.
@@ -24,9 +24,9 @@
  
  */
 
-#import "HomeViewController+AF.h"
+#import "HomeListViewController+AF.h"
 
-@implementation HomeViewController (AF)
+@implementation HomeListViewController (AF)
 
 //请求首页 推荐新闻
 //https://news-at.zhihu.com/api/7/stories/before/20170308?client=0
@@ -57,23 +57,7 @@
     }];
 }
 
-//请求主题接口
-//https://news-at.zhihu.com/api/7/themes
-- (void)requestThemeAPI:(ThemeData)data
-{
-    NSString *urlString = [NSString stringWithFormat:@"%@/api/7/themes",KURL];
-    [AFRequest requestDataWithUrlString:urlString Parameters:nil Method:@"GET" Proxy:nil Success:^(id result) {
-        if (data)
-        {
-            data(result);
-        }
-    } Progress:nil Failure:^(id result) {
-        if (data)
-        {
-            data(nil);
-        }
-    }];
-}
+
 
 //https://news-at.zhihu.com/api/7/theme/8
 //https://news-at.zhihu.com/api/7/theme/8/before/7082061

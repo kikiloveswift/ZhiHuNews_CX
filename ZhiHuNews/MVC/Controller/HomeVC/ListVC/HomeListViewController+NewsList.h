@@ -1,14 +1,14 @@
 //
-//  HomeViewController+NewsList.h
+//  HomeListViewController+NewsList.h
 //  ZhiHuNews
 //
 //  Created by konglee on 2017/3/9.
 //  Copyright © 2017年 陈鑫. All rights reserved.
 //
 
-#import "HomeViewController.h"
+#import "HomeListViewController.h"
 
-@interface HomeViewController (NewsList)
+@interface HomeListViewController (NewsList)
 
 - (NSInteger)n_tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 
