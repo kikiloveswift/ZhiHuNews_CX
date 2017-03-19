@@ -29,6 +29,7 @@ PODS:
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
   - SVProgressHUD (2.1.2)
+  - WXSDKCoreKit (1.7.5)
 
 DEPENDENCIES:
   - AFNetworking (= 2.5.4)
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - MJRefresh
   - SDWebImage
   - SVProgressHUD
+  - WXSDKCoreKit
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
@@ -45,7 +47,8 @@ SPEC CHECKSUMS:
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  WXSDKCoreKit: cfbbfb050e6dfbf9903e8a70e523aea0dcc1e069
 
-PODFILE CHECKSUM: 0c284c3226c94a1c7423f1b0e6228530b62578c9
+PODFILE CHECKSUM: 59fdbed28cbf6b0489b99141a080ac451f15ea18
 
 COCOAPODS: 1.1.1

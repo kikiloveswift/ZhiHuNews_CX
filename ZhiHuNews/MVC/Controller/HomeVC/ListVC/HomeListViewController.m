@@ -24,7 +24,12 @@
     MJRefreshFooter *_mjFooter;
     
     //首页推荐接口 顶部date
-    NSString *_recommand_date;
+    //上拉加载存储时间
+    NSString *_recommand_date_more;
+    
+    //下拉刷新存储时间
+    NSString *_recommand_date_refresh;
+
 }
 
 
@@ -59,7 +64,7 @@
     
     [self addUI];
     
-    [self requestRecommandAPINEWS:nil];
+    [self requestRecommandAPINEWS:nil WithState:0];
     
 }
 
@@ -72,6 +77,8 @@
     
     _currentSelectedModel = [HomeModel_Theme new];
     _currentSelectedModel.name = @"首页";
+    _recommand_date_refresh = @"";
+    _recommand_date_more = @"";
 }
 
 
@@ -111,33 +118,34 @@
     //设置默认分割线为无
     [_mTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self.view addSubview:_mTableView];
-//    _mTableView.mj_footer = [BaseMJAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(pullToRefresh)];
+    _mTableView.mj_footer = [BaseMJAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
     _mTableView.mj_header = [BaseMJAutoHeader headerWithRefreshingTarget:self refreshingAction:@selector(pullToRefresh)];
 
 }
 
+//下拉刷新
 - (void)pullToRefresh
 {
     if ([_currentSelectedModel.name isEqualToString:@"首页"])
     {
-        [self requestRecommandAPINEWS:nil];
+        [self requestRecommandAPINEWS:nil WithState:0];
     }
     else
     {
         //刷新别的页面
     }
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        // 拿到当前的下拉刷新控件，结束刷新状态
-        [_mTableView.mj_header endRefreshing];
-    });
+    
 }
 
+//上拉加载
 - (void)loadMoreData
 {
     if ([_currentSelectedModel.name isEqualToString:@"首页"])
     {
-        [self requestRecommandAPINEWS:_recommand_date];
+        if (![_recommand_date_more isEqualToString:@""])
+        {
+            [self requestRecommandAPINEWS:_recommand_date_more WithState:1];
+        }
     }
     else
     {
@@ -145,8 +153,8 @@
     }
 }
 
-//请求首页接口
-- (void)requestRecommandAPINEWS:(NSString *)params
+//请求首页接口 0为下拉刷新 1为上拉加载
+- (void)requestRecommandAPINEWS:(NSString *)params WithState:(NSInteger)state
 {
     [self requestRecommandAPI:^(id obj)
     {
@@ -154,7 +162,31 @@
         {
             if ([obj objectForKey:@"date"])
             {
-                _recommand_date = [obj objectForKey:@"date"];
+                _recommand_date_more = [obj objectForKey:@"date"];
+                
+                if (state == 0)
+                {
+                    if (_recommand_date_refresh.length > 0)
+                    {
+                        if ([_recommand_date_refresh isEqualToString:[obj objectForKey:@"date"]])
+                        {
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                [_mTableView reloadData];
+                                [_mTableView.mj_header endRefreshing];
+                            });
+                            return;
+                        }
+                        else
+                        {
+                            _recommand_date_refresh = [obj objectForKey:@"date"];
+                        }
+                    }
+                    else
+                    {
+                        _recommand_date_refresh = [obj objectForKey:@"date"];
+                    }
+                }
+                
             }
             if ([[obj objectForKey:@"stories"] isKindOfClass:[NSArray class]])
             {
@@ -180,11 +212,26 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.mTableView reloadData];
                 });
+                if (state)
+                {
+                    [_mTableView.mj_footer endRefreshing];
+                }
+                else
+                {
+                    [_mTableView.mj_header endRefreshing];
+                }
             }
         }
         else
         {
-            
+            if (state)
+            {
+                [_mTableView.mj_footer endRefreshing];
+            }
+            else
+            {
+                [_mTableView.mj_header endRefreshing];
+            }
         }
     } Params:params];
 }

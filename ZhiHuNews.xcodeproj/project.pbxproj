@@ -30,6 +30,8 @@
 		FCC974E21E71858C00AE9E3F /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC974E01E71858C00AE9E3F /* HomeTableViewCell.m */; };
 		FCC974E31E71858C00AE9E3F /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC974E11E71858C00AE9E3F /* HomeTableViewCell.xib */; };
 		FCC974E61E7189E900AE9E3F /* HomeModel_NewsList.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC974E51E7189E900AE9E3F /* HomeModel_NewsList.m */; };
+		FCEBCF781E7C0BCF008AF1F3 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEBCF761E7C0BCF008AF1F3 /* DetailViewController.m */; };
+		FCEBCF791E7C0BCF008AF1F3 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEBCF771E7C0BCF008AF1F3 /* DetailViewController.xib */; };
 		FCF69E941E7117F700C326D6 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF69E931E7117F700C326D6 /* BaseModel.m */; };
 		FCF69E971E7118D500C326D6 /* AFRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF69E961E7118D500C326D6 /* AFRequest.m */; };
 		FCF69E9A1E711B2F00C326D6 /* JSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF69E991E711B2F00C326D6 /* JSONData.m */; };
@@ -115,6 +117,9 @@
 		FCC974E11E71858C00AE9E3F /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		FCC974E41E7189E900AE9E3F /* HomeModel_NewsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel_NewsList.h; sourceTree = "<group>"; };
 		FCC974E51E7189E900AE9E3F /* HomeModel_NewsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel_NewsList.m; sourceTree = "<group>"; };
+		FCEBCF751E7C0BCF008AF1F3 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		FCEBCF761E7C0BCF008AF1F3 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		FCEBCF771E7C0BCF008AF1F3 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		FCF69E921E7117F700C326D6 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		FCF69E931E7117F700C326D6 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		FCF69E951E7118D500C326D6 /* AFRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFRequest.h; sourceTree = "<group>"; };
@@ -279,6 +284,7 @@
 		FC84B40A1E6EF0F1008FA234 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FCEBCF741E7C0BB2008AF1F3 /* DetailVC */,
 				FCF69EA11E7129C900C326D6 /* HomeVC */,
 				FCF69EAB1E7136B600C326D6 /* FavVC */,
 				FCF69EAC1E7136B600C326D6 /* MineVC */,
@@ -372,6 +378,16 @@
 				FCC974E11E71858C00AE9E3F /* HomeTableViewCell.xib */,
 			);
 			path = HomeTableViewCell;
+			sourceTree = "<group>";
+		};
+		FCEBCF741E7C0BB2008AF1F3 /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				FCEBCF751E7C0BCF008AF1F3 /* DetailViewController.h */,
+				FCEBCF761E7C0BCF008AF1F3 /* DetailViewController.m */,
+				FCEBCF771E7C0BCF008AF1F3 /* DetailViewController.xib */,
+			);
+			path = DetailVC;
 			sourceTree = "<group>";
 		};
 		FCF69EA11E7129C900C326D6 /* HomeVC */ = {
@@ -555,6 +571,7 @@
 			files = (
 				FC84B3E61E6EEAB6008FA234 /* LaunchScreen.storyboard in Resources */,
 				FC84B3E31E6EEAB6008FA234 /* Assets.xcassets in Resources */,
+				FCEBCF791E7C0BCF008AF1F3 /* DetailViewController.xib in Resources */,
 				FCC974E31E71858C00AE9E3F /* HomeTableViewCell.xib in Resources */,
 				FC84B3E11E6EEAB6008FA234 /* Main.storyboard in Resources */,
 			);
@@ -632,6 +649,7 @@
 				FCF69EC11E713AB100C326D6 /* BYArrow.m in Sources */,
 				FC84B3DE1E6EEAB6008FA234 /* ViewController.m in Sources */,
 				FCF69ECE1E714EAE00C326D6 /* HomeModel_Theme.m in Sources */,
+				FCEBCF781E7C0BCF008AF1F3 /* DetailViewController.m in Sources */,
 				FCB2AFBF1E7B7B0800C792BF /* HomeRootViewController.m in Sources */,
 				FCF69EC21E713AB100C326D6 /* BYDeleteBar.m in Sources */,
 				FCF69EC61E713AB100C326D6 /* BYScroller.m in Sources */,
