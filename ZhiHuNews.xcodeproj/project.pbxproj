@@ -30,6 +30,8 @@
 		FCC974E21E71858C00AE9E3F /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC974E01E71858C00AE9E3F /* HomeTableViewCell.m */; };
 		FCC974E31E71858C00AE9E3F /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC974E11E71858C00AE9E3F /* HomeTableViewCell.xib */; };
 		FCC974E61E7189E900AE9E3F /* HomeModel_NewsList.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC974E51E7189E900AE9E3F /* HomeModel_NewsList.m */; };
+		FCD695E31E7F8352008438AB /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD695E21E7F8352008438AB /* DetailModel.m */; };
+		FCD695E51E7FB9F0008438AB /* detailNews9300692.json in Resources */ = {isa = PBXBuildFile; fileRef = FCD695E41E7FB9F0008438AB /* detailNews9300692.json */; };
 		FCEBCF781E7C0BCF008AF1F3 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEBCF761E7C0BCF008AF1F3 /* DetailViewController.m */; };
 		FCEBCF791E7C0BCF008AF1F3 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEBCF771E7C0BCF008AF1F3 /* DetailViewController.xib */; };
 		FCF69E941E7117F700C326D6 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF69E931E7117F700C326D6 /* BaseModel.m */; };
@@ -117,6 +119,9 @@
 		FCC974E11E71858C00AE9E3F /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		FCC974E41E7189E900AE9E3F /* HomeModel_NewsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel_NewsList.h; sourceTree = "<group>"; };
 		FCC974E51E7189E900AE9E3F /* HomeModel_NewsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel_NewsList.m; sourceTree = "<group>"; };
+		FCD695E11E7F8352008438AB /* DetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailModel.h; sourceTree = "<group>"; };
+		FCD695E21E7F8352008438AB /* DetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailModel.m; sourceTree = "<group>"; };
+		FCD695E41E7FB9F0008438AB /* detailNews9300692.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = detailNews9300692.json; sourceTree = "<group>"; };
 		FCEBCF751E7C0BCF008AF1F3 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		FCEBCF761E7C0BCF008AF1F3 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		FCEBCF771E7C0BCF008AF1F3 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
@@ -295,6 +300,7 @@
 		FC84B40B1E6EF0F1008FA234 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FCD695E01E7F833E008438AB /* DetailModel */,
 				FCF69ECB1E714E9B00C326D6 /* HomeModel */,
 			);
 			path = Model;
@@ -378,6 +384,16 @@
 				FCC974E11E71858C00AE9E3F /* HomeTableViewCell.xib */,
 			);
 			path = HomeTableViewCell;
+			sourceTree = "<group>";
+		};
+		FCD695E01E7F833E008438AB /* DetailModel */ = {
+			isa = PBXGroup;
+			children = (
+				FCD695E41E7FB9F0008438AB /* detailNews9300692.json */,
+				FCD695E11E7F8352008438AB /* DetailModel.h */,
+				FCD695E21E7F8352008438AB /* DetailModel.m */,
+			);
+			path = DetailModel;
 			sourceTree = "<group>";
 		};
 		FCEBCF741E7C0BB2008AF1F3 /* DetailVC */ = {
@@ -574,6 +590,7 @@
 				FCEBCF791E7C0BCF008AF1F3 /* DetailViewController.xib in Resources */,
 				FCC974E31E71858C00AE9E3F /* HomeTableViewCell.xib in Resources */,
 				FC84B3E11E6EEAB6008FA234 /* Main.storyboard in Resources */,
+				FCD695E51E7FB9F0008438AB /* detailNews9300692.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +665,7 @@
 			files = (
 				FCF69EC11E713AB100C326D6 /* BYArrow.m in Sources */,
 				FC84B3DE1E6EEAB6008FA234 /* ViewController.m in Sources */,
+				FCD695E31E7F8352008438AB /* DetailModel.m in Sources */,
 				FCF69ECE1E714EAE00C326D6 /* HomeModel_Theme.m in Sources */,
 				FCEBCF781E7C0BCF008AF1F3 /* DetailViewController.m in Sources */,
 				FCB2AFBF1E7B7B0800C792BF /* HomeRootViewController.m in Sources */,

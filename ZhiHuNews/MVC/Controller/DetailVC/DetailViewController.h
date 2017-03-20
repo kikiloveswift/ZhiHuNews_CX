@@ -10,4 +10,34 @@
 
 @interface DetailViewController : RootViewController
 
+
+/**
+ 返回按钮
+ */
+@property (weak, nonatomic) IBOutlet UIButton *navBackBtn;
+
+/**
+ 收藏按钮
+ */
+@property (weak, nonatomic) IBOutlet UIButton *favBtn;
+
+
+
+/**
+ 分享按钮
+ */
+@property (weak, nonatomic) IBOutlet UIButton *shareBtn;
+
+
+/**
+ 下一页
+ */
+@property (weak, nonatomic) IBOutlet UIButton *nextBtn;
+
+
+- (instancetype)initWithtag:(NSNumber *)tag;
+
+
+
+
 @end

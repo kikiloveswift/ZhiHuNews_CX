@@ -8,6 +8,7 @@
 
 #import "HomeListViewController+NewsList.h"
 #import "HomeTableViewCell.h"
+#import "DetailViewController.h"
 
 @implementation HomeListViewController (NewsList)
 
@@ -35,6 +36,11 @@
 {
     HomeTableViewCell *cell = (HomeTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
     cell.titleLabel.textColor = UIColorRGB(34, 34, 34, 0.498);
+    
+    HomeModel_NewsList *hModel = cell.model;
+    
+    DetailViewController *detailVC = [[DetailViewController alloc] initWithtag:hModel.id_n];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 
