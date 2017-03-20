@@ -20,6 +20,22 @@
         {
             self.id_n = [jsonDic objectForKey:@"id"];
         }
+        if ([[jsonDic objectForKey:@"css"] isKindOfClass:[NSArray class]])
+        {
+            NSArray *cssArr = [jsonDic objectForKey:@"css"];
+            if (cssArr.count > 0)
+            {
+                self.css = cssArr[0];
+            }
+        }
+        if ([[jsonDic objectForKey:@"images"] isKindOfClass:[NSArray class]])
+        {
+            NSArray *imagesArr = [jsonDic objectForKey:@"images"];
+            if (imagesArr.count > 0)
+            {
+                self.images = imagesArr[0];
+            }
+        }
     }
     return self;
 }

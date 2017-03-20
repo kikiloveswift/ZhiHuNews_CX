@@ -16,13 +16,15 @@
 
 @property (nonatomic, copy) NSString *share_url;
 
-@property (nonatomic, strong) NSArray *css;
+//这里写为NSString 方便存表
+@property (nonatomic, strong) NSString *css;
 
 @property (nonatomic, strong) NSNumber *id_n;
 
 @property (nonatomic, strong) NSNumber *type;
 
-@property (nonatomic, strong) NSArray *images;
+//这里写为NSString 方便存表
+@property (nonatomic, strong) NSString *images;
 
 @property (nonatomic, copy) NSString *image;
 

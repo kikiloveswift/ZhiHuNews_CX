@@ -125,6 +125,8 @@ typedef void(^BuildThen)();
     [self requestAPI:^{
        
         dispatch_async(dispatch_get_main_queue(), ^{
+            //TODO: 查询数据库 是否收藏此条新闻
+            
             NSString *bodyStr = nil;
             NSString *cssStyle = nil;
             if (weakself.dataArr && weakself.dataArr.count > 0)
@@ -133,11 +135,9 @@ typedef void(^BuildThen)();
                 {
                     DetailModel *dModel = weakself.dataArr[0];
                     bodyStr = dModel.body;
-                    if (dModel.css && dModel.css.count > 0)
-                    {
-                        cssStyle = dModel.css[0];
-                    }
-                    if (dModel.type.integerValue == 0)
+                    cssStyle = dModel.css;
+
+                    if (dModel.image)
                     {
                         weakself.hasTopView = YES;
                         [weakself.imgView sd_setImageWithURL:[NSURL URLWithString:dModel.image] placeholderImage:[UIImage imageNamed:@"wallpaper_profile"]];
@@ -210,6 +210,19 @@ typedef void(^BuildThen)();
     return NO;
 }
 
+//收藏此条
+- (void)favNews
+{
+    self.favBtn.selected = YES;
+    [self.favBtn setImage:[UIImage imageNamed:@"news_fav"] forState:UIControlStateSelected];
+}
+
+//取消收藏
+- (void)disFavNews
+{
+    self.favBtn.selected = NO;
+    [self.favBtn setImage:[UIImage imageNamed:@"news_disfav"] forState:UIControlStateNormal];
+}
 - (IBAction)backAction:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
@@ -217,7 +230,16 @@ typedef void(^BuildThen)();
 
 - (IBAction)favAction:(id)sender
 {
+    self.favBtn.selected = !self.favBtn.selected;
     
+    if (self.favBtn.selected)
+    {
+        [self favNews];
+    }
+    else
+    {
+        [self disFavNews];
+    }
 }
 - (IBAction)shareAction:(id)sender
 {

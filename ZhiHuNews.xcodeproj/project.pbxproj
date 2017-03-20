@@ -32,6 +32,8 @@
 		FCC974E61E7189E900AE9E3F /* HomeModel_NewsList.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC974E51E7189E900AE9E3F /* HomeModel_NewsList.m */; };
 		FCD695E31E7F8352008438AB /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD695E21E7F8352008438AB /* DetailModel.m */; };
 		FCD695E51E7FB9F0008438AB /* detailNews9300692.json in Resources */ = {isa = PBXBuildFile; fileRef = FCD695E41E7FB9F0008438AB /* detailNews9300692.json */; };
+		FCE77A251E7FD1B1000F4D34 /* FMDBHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE77A241E7FD1B1000F4D34 /* FMDBHandler.m */; };
+		FCE77A271E7FDF37000F4D34 /* AllTheme.json in Resources */ = {isa = PBXBuildFile; fileRef = FCE77A261E7FDF37000F4D34 /* AllTheme.json */; };
 		FCEBCF781E7C0BCF008AF1F3 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEBCF761E7C0BCF008AF1F3 /* DetailViewController.m */; };
 		FCEBCF791E7C0BCF008AF1F3 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEBCF771E7C0BCF008AF1F3 /* DetailViewController.xib */; };
 		FCF69E941E7117F700C326D6 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF69E931E7117F700C326D6 /* BaseModel.m */; };
@@ -122,6 +124,9 @@
 		FCD695E11E7F8352008438AB /* DetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailModel.h; sourceTree = "<group>"; };
 		FCD695E21E7F8352008438AB /* DetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailModel.m; sourceTree = "<group>"; };
 		FCD695E41E7FB9F0008438AB /* detailNews9300692.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = detailNews9300692.json; sourceTree = "<group>"; };
+		FCE77A231E7FD1B1000F4D34 /* FMDBHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBHandler.h; sourceTree = "<group>"; };
+		FCE77A241E7FD1B1000F4D34 /* FMDBHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBHandler.m; sourceTree = "<group>"; };
+		FCE77A261E7FDF37000F4D34 /* AllTheme.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllTheme.json; sourceTree = "<group>"; };
 		FCEBCF751E7C0BCF008AF1F3 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		FCEBCF761E7C0BCF008AF1F3 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		FCEBCF771E7C0BCF008AF1F3 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
@@ -337,6 +342,9 @@
 				FC6060F91E7BDEEC003AA117 /* BaseMJAutoFooter.m */,
 				FC6060FB1E7BE0F2003AA117 /* BaseMJAutoHeader.h */,
 				FC6060FC1E7BE0F2003AA117 /* BaseMJAutoHeader.m */,
+				FCE77A231E7FD1B1000F4D34 /* FMDBHandler.h */,
+				FCE77A241E7FD1B1000F4D34 /* FMDBHandler.m */,
+				FCE77A261E7FDF37000F4D34 /* AllTheme.json */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -587,6 +595,7 @@
 			files = (
 				FC84B3E61E6EEAB6008FA234 /* LaunchScreen.storyboard in Resources */,
 				FC84B3E31E6EEAB6008FA234 /* Assets.xcassets in Resources */,
+				FCE77A271E7FDF37000F4D34 /* AllTheme.json in Resources */,
 				FCEBCF791E7C0BCF008AF1F3 /* DetailViewController.xib in Resources */,
 				FCC974E31E71858C00AE9E3F /* HomeTableViewCell.xib in Resources */,
 				FC84B3E11E6EEAB6008FA234 /* Main.storyboard in Resources */,
@@ -696,6 +705,7 @@
 				FC8871191E72CD010000C4A6 /* UIViewExt.m in Sources */,
 				FCF69E9A1E711B2F00C326D6 /* JSONData.m in Sources */,
 				FCF69EC41E713AB100C326D6 /* BYListBar.m in Sources */,
+				FCE77A251E7FD1B1000F4D34 /* FMDBHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
