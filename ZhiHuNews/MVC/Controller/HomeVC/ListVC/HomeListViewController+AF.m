@@ -31,19 +31,35 @@
 //请求首页 推荐新闻
 //https://news-at.zhihu.com/api/7/stories/before/20170308?client=0
 //https://news-at.zhihu.com/api/7/stories/latest?client=0
-- (void)requestRecommandAPI:(RecommndData)recommandBlock Params:(NSString *)params
+- (void)requestRecommandAPI:(RecommndData)recommandBlock Params:(NSString *)params Theme:(NSString *)theme
 {
     
     NSString *urlString = nil;
-    
-    if (params)
+    if (theme.integerValue == 1)
     {
-        urlString = [NSString stringWithFormat:@"%@/api/7/stories/before/%@?client=0",KURL,params];
+        //首页
+        if (params)
+        {
+            urlString = [NSString stringWithFormat:@"%@/api/7/stories/before/%@?client=0",KURL,params];
+        }
+        else
+        {
+            urlString = [NSString stringWithFormat:@"%@/api/7/stories/latest",KURL];
+        }
     }
     else
     {
-        urlString = [NSString stringWithFormat:@"%@/api/7/stories/latest",KURL];
+        if (params)
+        {
+            urlString = [NSString stringWithFormat:@"%@/api/7/theme/%@/before/%@",KURL,theme,params];
+        }
+        else
+        {
+            urlString = [NSString stringWithFormat:@"%@/api/7/theme/%@",KURL,theme];
+        }
     }
+    
+    
     [AFRequest requestDataWithUrlString:urlString Parameters:nil Method:@"GET" Proxy:nil Success:^(id result) {
         if (recommandBlock)
         {

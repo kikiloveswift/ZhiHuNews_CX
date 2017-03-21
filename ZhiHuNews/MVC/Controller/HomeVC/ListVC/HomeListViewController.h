@@ -11,6 +11,8 @@
 
 @interface HomeListViewController : RootViewController<HomePageDidChangeProtocol>
 
+- (instancetype)initWithChannel:(NSNumber *)channel;
+
 //主题Arr
 @property (nonatomic, strong) NSArray *themeArr;
 

@@ -13,7 +13,7 @@
 
 @interface HomeScrollViewController ()
 
-@property (nonatomic, strong) NSMutableSet *pages;
+@property (nonatomic, strong) NSMutableArray *pages;
 
 @property (nonatomic, strong) NSMutableSet *preLoadPages;
 
@@ -36,7 +36,7 @@
 {
     if (!_pages)
     {
-        _pages = [NSMutableSet set];
+        _pages = [NSMutableArray array];
     }
     
     if (!_preLoadPages)
@@ -47,10 +47,10 @@
 
 - (void)preloadPages
 {
-    for (int i = 0; i < 2; i ++)
-    {
-        [_pages addObject:[HomeListViewController new]];
-    }
+    
+    [_pages addObject:[[HomeListViewController alloc] initWithChannel:@1]];
+    [_pages addObject:[[HomeListViewController alloc] initWithChannel:@13]];
+    
     for (homePageProtocol vc in _pages)
     {
         vc.scrollDelegate = (id<HomeScrollViewDelegate>)self.parentViewController;
@@ -118,6 +118,15 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     NSLog(@"scrollView contentoffset x is %.1f",scrollView.contentOffset.x);
+}
+
+//滚动即将结束
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    if ([self.controllDelegate respondsToSelector:@selector(homePageDidScroll:)])
+    {
+        [self.controllDelegate homePageDidScroll:scrollView];
+    }
 }
 
 @end

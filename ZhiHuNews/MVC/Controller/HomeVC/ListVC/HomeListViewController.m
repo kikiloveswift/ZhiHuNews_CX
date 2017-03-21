@@ -29,7 +29,13 @@
     
     //下拉刷新存储时间
     NSString *_recommand_date_refresh;
-
+    
+    //其他Channel
+    //上拉加载存储参数
+    NSString *_channel_last_params;
+    
+    //下拉刷新存储参数
+    NSString *_channel_first_params;
 }
 
 
@@ -49,6 +55,12 @@
 @property (nonatomic, strong) UITableView *showTableView;
 
 
+/**
+ 当前频道
+ */
+@property (nonatomic, strong) NSNumber *currentChannel;
+
+
 @property (nonatomic, strong) HomeScrollViewController *scrollVC;
 
 
@@ -59,15 +71,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [self settings];
-    
-    [self addUI];
-    
-    [self requestRecommandAPINEWS:nil WithState:0];
-    
 }
 
+- (instancetype)initWithChannel:(NSNumber *)channel
+{
+    self = [super init];
+    if (self)
+    {
+        _currentChannel = channel;
+        [self settings];
+        [self addUI];
+        if (channel.integerValue == 1)
+        {
+            [self requestRecommandAPINEWS:nil WithState:0 Theme:[NSString stringWithFormat:@"%@",channel]];
+
+        }
+        else
+        {
+            [self requestChannelAPINEWS:nil WithState:0 Theme:[NSString stringWithFormat:@"%@",channel]];
+        }
+        
+    }
+    return self;
+}
 - (void)settings
 {
     if (!_mArr1)
@@ -79,6 +105,8 @@
     _currentSelectedModel.name = @"首页";
     _recommand_date_refresh = @"";
     _recommand_date_more = @"";
+    _channel_last_params = @"";
+    _channel_first_params = @"";
 }
 
 
@@ -126,13 +154,14 @@
 //下拉刷新
 - (void)pullToRefresh
 {
-    if ([_currentSelectedModel.name isEqualToString:@"首页"])
+    if (_currentChannel.integerValue == 1)
     {
-        [self requestRecommandAPINEWS:nil WithState:0];
+        [self requestRecommandAPINEWS:nil WithState:0 Theme:@"1"];
     }
     else
     {
         //刷新别的页面
+        [self requestChannelAPINEWS:nil WithState:0 Theme:[NSString stringWithFormat:@"%@",_currentChannel]];
     }
     
 }
@@ -140,21 +169,21 @@
 //上拉加载
 - (void)loadMoreData
 {
-    if ([_currentSelectedModel.name isEqualToString:@"首页"])
+    if (_currentChannel.integerValue == 1)
     {
         if (![_recommand_date_more isEqualToString:@""])
         {
-            [self requestRecommandAPINEWS:_recommand_date_more WithState:1];
+            [self requestRecommandAPINEWS:_recommand_date_more WithState:1 Theme:@"1"];
         }
     }
     else
     {
-        
+        [self requestChannelAPINEWS:_channel_last_params WithState:1 Theme:[NSString stringWithFormat:@"%@",_currentChannel]];
     }
 }
 
 //请求首页接口 0为下拉刷新 1为上拉加载
-- (void)requestRecommandAPINEWS:(NSString *)params WithState:(NSInteger)state
+- (void)requestRecommandAPINEWS:(NSString *)params WithState:(NSInteger)state Theme:(NSString *)theme
 {
     [self requestRecommandAPI:^(id obj)
     {
@@ -233,7 +262,77 @@
                 [_mTableView.mj_header endRefreshing];
             }
         }
-    } Params:params];
+    } Params:params Theme:theme];
+}
+
+- (void)requestChannelAPINEWS:(NSString *)params WithState:(NSInteger)state Theme:(NSString *)theme
+{
+    [self requestRecommandAPI:^(id obj)
+     {
+         if ([obj isKindOfClass:[NSDictionary class]])
+         {
+             if ([[obj objectForKey:@"stories"] isKindOfClass:[NSArray class]])
+             {
+                 NSArray *stories = (NSArray *)[obj objectForKey:@"stories"];
+                 NSMutableArray *mArr = [NSMutableArray array];
+                 for (NSDictionary *dic in stories)
+                 {
+                     HomeModel_NewsList *list = [[HomeModel_NewsList alloc] initContentWithDic:dic];
+                     [mArr addObject:list];
+                 }
+                 HomeModel_NewsList *lFModel = (HomeModel_NewsList *)[mArr firstObject];
+                 if (_channel_first_params.integerValue == lFModel.id_n.integerValue)
+                 {
+                         dispatch_async(dispatch_get_main_queue(), ^{
+                             [_mTableView reloadData];
+                             [_mTableView.mj_header endRefreshing];
+                         });
+                         return;
+                 }
+                 else
+                 {
+                     _channel_first_params = [NSString stringWithFormat:@"%@",lFModel.id_n];
+                 }
+                 
+                 if (params)
+                 {
+                     [_mArr1 addObjectsFromArray:mArr];
+                 }
+                 else
+                 {
+                     [mArr addObjectsFromArray:_mArr1];
+                     NSMutableArray *mArrSam = [mArr mutableCopy];
+                     [_mArr1 addObjectsFromArray:mArrSam];
+                 }
+                 //把数据赋值给数据源
+                 self.dataArrMiddle = _mArr1;
+                 HomeModel_NewsList *lModel = (HomeModel_NewsList *)[self.dataArrMiddle lastObject];
+                 _channel_last_params = [NSString stringWithFormat:@"%@",lModel.id_n];
+                 dispatch_async(dispatch_get_main_queue(), ^{
+                     [self.mTableView reloadData];
+                 });
+                 if (state)
+                 {
+                     [_mTableView.mj_footer endRefreshing];
+                 }
+                 else
+                 {
+                     [_mTableView.mj_header endRefreshing];
+                 }
+             }
+         }
+         else
+         {
+             if (state)
+             {
+                 [_mTableView.mj_footer endRefreshing];
+             }
+             else
+             {
+                 [_mTableView.mj_header endRefreshing];
+             }
+         }
+     } Params:params Theme:theme];
 }
 
 

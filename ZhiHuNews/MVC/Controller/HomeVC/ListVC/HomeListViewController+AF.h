@@ -13,7 +13,7 @@ typedef void(^ThemeEveryTotalData)(id obj);
 @interface HomeListViewController (AF)
 
 //请求首页推荐新闻
-- (void)requestRecommandAPI:(RecommndData)recommandBlock Params:(NSString *)params;
+- (void)requestRecommandAPI:(RecommndData)recommandBlock Params:(NSString *)params Theme:(NSString *)theme;
 
 
 

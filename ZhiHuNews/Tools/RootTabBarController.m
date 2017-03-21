@@ -15,7 +15,6 @@
 
 #import "MineViewController.h"
 
-#import "ViewController.h"
 
 @interface RootTabBarController ()
 
@@ -36,8 +35,7 @@
     RootNavigationController *homeNav = [[RootNavigationController alloc] initWithRootViewController:homePage];
     [self addChildVC:homeNav titile:@"首页" imageName:@"tabhome_normal" selectImg:@"tabhome_red"];
     
-    ViewController *favVC = [ViewController new];
-//    FavViewController *favVC = [FavViewController new];
+    FavViewController *favVC = [FavViewController new];
     RootNavigationController *favNav = [[RootNavigationController alloc] initWithRootViewController:favVC];
     [self addChildVC:favNav titile:@"收藏" imageName:@"tabfav_normal" selectImg:@"tabfav_red"];
     

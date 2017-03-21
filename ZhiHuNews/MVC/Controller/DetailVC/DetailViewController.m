@@ -150,14 +150,7 @@ typedef void(^BuildThen)();
                     if (dModel.image)
                     {
                         weakself.hasTopView = YES;
-                        UIEdgeInsets edgeInsets = UIEdgeInsetsMake(0.5, 0.5, 0.5, 0.5);
-                        
-                        UIImage *img = [UIImage imageNamed:@"wallpaper_profile"];
-                        
-                        UIImageResizingMode mode = UIImageResizingModeStretch;
-                        
-                        UIImage *newImage = [img resizableImageWithCapInsets:edgeInsets resizingMode:mode];
-                        [weakself.imgView sd_setImageWithURL:[NSURL URLWithString:dModel.image] placeholderImage:newImage];
+                        [weakself.imgView sd_setImageWithURL:[NSURL URLWithString:dModel.image] placeholderImage:[UIImage imageNamed:@"wallpaper_profile"]];
                         weakself.imgView.hidden = NO;
                     }
                 }

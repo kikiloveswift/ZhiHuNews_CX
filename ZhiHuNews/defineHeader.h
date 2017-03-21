@@ -36,7 +36,7 @@
 //RGB色值
 #define UIColorRGB(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a/1.0]
 
-#define padding 20
+#define padding 10
 #define itemPerLine 4
 #define kItemW (kScreenW-padding*(itemPerLine+1))/itemPerLine
 #define kItemH 25

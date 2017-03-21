@@ -176,7 +176,7 @@
         [self addChildViewController:scrollVC];
         scrollVC.view.frame = self.view.bounds;
         scrollVC.controllDelegate = self;
-        [self.view insertSubview:scrollVC.view belowSubview:self.listBar];
+        [self.view insertSubview:scrollVC.view belowSubview:self.detailsList];
         self.homeScrollVC = scrollVC;
         scrollVC.view.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     }
@@ -185,7 +185,7 @@
 #pragma Mark-HomeScrollViewControllerDelegate
 - (void)homePageDidScroll:(UIScrollView *)scrollView
 {
-    
+    [self.listBar itemClickByScrollerWithIndex:scrollView.contentOffset.x / kScreenW];
 }
 
 #pragma Mark-ItemSelected
