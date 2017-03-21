@@ -59,6 +59,9 @@
     btn.frame = CGRectMake(20, 20, 80, 50);
     [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
+    
+    [FMDBHandler initWithDetailSQL];
+    
 }
 
 - (void)btnAction

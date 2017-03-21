@@ -11,8 +11,6 @@
 
 #import "WebKit/WebKit.h"
 
-#import "FMDB.h"
-
 #import "MJRefresh.h"
 
 #import "SVProgressHUD.h"
@@ -34,5 +32,7 @@
 #import "BaseMJAutoFooter.h"
 
 #import "BaseMJAutoHeader.h"
+
+#import "FMDBHandler.h"
 
 #endif 

@@ -7,9 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FMDB.h"
+
+@class DetailModel;
+
+@class HomeModel_NewsList;
 
 @interface FMDBHandler : NSObject
 
 + (void)initWithDetailSQL;
+
+//增
++ (void)insertDetailTableWith:(DetailModel *)dModel;
+
+//增
++ (void)insertNewsListTable:(NSString *)tableName With:(HomeModel_NewsList *)hModel;
+
+//删
++ (void)delDetailTableWith:(NSNumber *)id_n;
+
+//查
++ (BOOL)findDetailTableWith:(NSNumber *)id_n;
 
 @end

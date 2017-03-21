@@ -46,5 +46,9 @@
 
 #define WeChatAPPID @"wx0cc7de55902ced91"
 
+#define WeboAPPKEY @"3325013476"
+
+#define WeboAPPSecret @"f8d25c80a96e17f7f18b69788fb61b3c"
+
 
 #endif 

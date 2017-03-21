@@ -36,6 +36,12 @@
                 self.images = imagesArr[0];
             }
         }
+        if ([jsonDic objectForKey:@"body"])
+        {
+            NSString *str = [jsonDic objectForKey:@"body"];
+            NSString *rstr = [str stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+            self.body = rstr;
+        }
     }
     return self;
 }

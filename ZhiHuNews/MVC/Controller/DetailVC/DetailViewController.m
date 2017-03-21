@@ -100,6 +100,16 @@ typedef void(^BuildThen)();
     [self initUI];
     self.fd_prefersNavigationBarHidden = YES;
     [SVProgressHUD showWithStatus:@"loading..."];
+    if ([self didHasFav])
+    {
+        self.favBtn.selected = YES;
+        [self.favBtn setImage:[UIImage imageNamed:@"news_fav"] forState:UIControlStateSelected];
+    }
+    else
+    {
+        self.favBtn.selected = NO;
+        [self.favBtn setImage:[UIImage imageNamed:@"news_disfav"] forState:UIControlStateNormal];
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -140,7 +150,14 @@ typedef void(^BuildThen)();
                     if (dModel.image)
                     {
                         weakself.hasTopView = YES;
-                        [weakself.imgView sd_setImageWithURL:[NSURL URLWithString:dModel.image] placeholderImage:[UIImage imageNamed:@"wallpaper_profile"]];
+                        UIEdgeInsets edgeInsets = UIEdgeInsetsMake(0.5, 0.5, 0.5, 0.5);
+                        
+                        UIImage *img = [UIImage imageNamed:@"wallpaper_profile"];
+                        
+                        UIImageResizingMode mode = UIImageResizingModeStretch;
+                        
+                        UIImage *newImage = [img resizableImageWithCapInsets:edgeInsets resizingMode:mode];
+                        [weakself.imgView sd_setImageWithURL:[NSURL URLWithString:dModel.image] placeholderImage:newImage];
                         weakself.imgView.hidden = NO;
                     }
                 }
@@ -207,7 +224,7 @@ typedef void(^BuildThen)();
 //TODO: 查询数据库 是否已收藏
 - (BOOL)didHasFav
 {
-    return NO;
+    return [FMDBHandler findDetailTableWith:_id_n];
 }
 
 //收藏此条
@@ -215,6 +232,11 @@ typedef void(^BuildThen)();
 {
     self.favBtn.selected = YES;
     [self.favBtn setImage:[UIImage imageNamed:@"news_fav"] forState:UIControlStateSelected];
+    if (self.dataArr && self.dataArr.count > 0)
+    {
+        DetailModel *dModel = (DetailModel *)self.dataArr[0];
+        [FMDBHandler insertDetailTableWith:dModel];
+    }
 }
 
 //取消收藏
@@ -222,6 +244,12 @@ typedef void(^BuildThen)();
 {
     self.favBtn.selected = NO;
     [self.favBtn setImage:[UIImage imageNamed:@"news_disfav"] forState:UIControlStateNormal];
+    if (self.dataArr && self.dataArr.count > 0)
+    {
+        DetailModel *dModel = (DetailModel *)self.dataArr[0];
+        [FMDBHandler delDetailTableWith:dModel.id_n];
+    }
+    
 }
 - (IBAction)backAction:(id)sender
 {
