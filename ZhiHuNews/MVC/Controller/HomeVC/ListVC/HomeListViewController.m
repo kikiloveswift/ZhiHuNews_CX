@@ -109,28 +109,6 @@
     _channel_first_params = @"";
 }
 
-
-
-- (void)testAF
-{
-    //http://news-at.zhihu.com/api/4/theme/13
-    [AFRequest requestDataWithUrlString:@"http://news-at.zhihu.com/api/4/theme/13" Parameters:nil Method:@"GET" Proxy:nil Success:^(id result) {
-        NSLog(@"result is %@",result);
-    } Progress:nil Failure:^(id result) {
-        
-    }];
-    
-}
-
-
-//-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-//{
-//    if (scrollView == _mainScroller)
-//    {
-//        [self.listBar itemClickByScrollerWithIndex:scrollView.contentOffset.x / self.mainScroller.frame.size.width];
-//    }
-//}
-
 //TODO: 添加主页视图
 - (void)addUI
 {

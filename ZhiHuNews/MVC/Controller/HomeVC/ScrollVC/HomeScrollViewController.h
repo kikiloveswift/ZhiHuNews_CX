@@ -18,6 +18,8 @@
 
 @interface HomeScrollViewController : RootViewController<UIScrollViewDelegate>
 
+@property (nonatomic, strong) UIScrollView *scrollView;
+
 
 
 //主题Arr
@@ -26,6 +28,12 @@
 @property (nonatomic, strong) NSMutableArray *pages;
 
 @property (nonatomic, strong) NSMutableSet *preLoadPages;
+
+
+/**
+ 缓存的pages
+ */
+@property (nonatomic, strong) NSMutableDictionary *cachePages;
 
 
 @end

@@ -11,11 +11,56 @@
 @implementation HomeScrollViewController (SwitchLogic)
 
 - (void)sWitchPageWithCurrentPage:(HomeModel_Theme *)cModle
-               Left:(HomeModel_Theme *)lModel
-              Right:(HomeModel_Theme *)rModel
-       CurrentIndex:(NSInteger)index
+                             Left:(HomeModel_Theme *)lModel
+                            Right:(HomeModel_Theme *)rModel
+                     CurrentIndex:(NSInteger)index
 {
+    if (lModel == nil)
+    {
+        //第一页面
+        
+    }
+    else if (rModel == nil)
+    {
+        //最末页面
+    }
+    else
+    {
+        
+    }
     
 }
+
+- (homePageProtocol)recyclePage
+{
+    for (id page in self.pages)
+    {
+        if ([page isKindOfClass:[HomeListViewController class]])
+        {
+            return page;
+        }
+    }
+    return nil;
+}
+
+- (void)addControllAt:(NSInteger)index
+{
+    homePageProtocol page = [self recyclePage];
+    if (page)
+    {
+        [self.pages removeObject:page];
+    }
+    else
+    {
+        page = [[HomeListViewController alloc] init];
+        [self addChildViewController:(id)page];
+    }
+    
+    page.view.frame = (CGRect){self.scrollView.width * index, 0, self.scrollView.size};
+    page.view.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    [self.scrollView addSubview:page.view];
+}
+
+
 
 @end

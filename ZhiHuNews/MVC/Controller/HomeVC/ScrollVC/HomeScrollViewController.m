@@ -33,7 +33,6 @@
 
 @property (nonatomic,strong) BYArrow *arrow;
 
-@property (nonatomic, strong) UIScrollView *scrollView;
 
 @end
 
@@ -167,7 +166,10 @@
     {
         _pages = [NSMutableArray array];
     }
-    
+    if (!_cachePages)
+    {
+        _cachePages = [NSMutableDictionary dictionary];
+    }
     if (!_preLoadPages)
     {
         _preLoadPages = [NSMutableSet set];
