@@ -172,30 +172,31 @@
     }
     if (!_preLoadPages)
     {
-        _preLoadPages = [NSMutableSet set];
+        _preLoadPages = [NSMutableArray array];
     }
 }
 
 //预加载
 - (void)preloadPages
 {
-    [_pages addObject:[[HomeListViewController alloc] initWithChannel:@1]];
-    [_pages addObject:[[HomeListViewController alloc] initWithChannel:@13]];
+    HomeListViewController *list1 = [[HomeListViewController alloc] initWithChannel:@1];
+    HomeListViewController *list13 = [[HomeListViewController alloc] initWithChannel:@13];
+    [_pages addObject:list1];
+    [_pages addObject:list13];
     
     for (homePageProtocol vc in _pages)
     {
-        vc.scrollDelegate = (id<HomeScrollViewDelegate>)self.parentViewController;
         [self.view addSubview:vc.view];
         [vc.view removeFromSuperview];
         [self addChildViewController:(id)vc];
     }
-    for (NSInteger i = 0; i < 2; i ++)
-    {
-        [self addControllAt:i];
-    }
+   
+    [self addControllAt:0 Channel:1];
+    [self addControllAt:1 Channel:13];
+    
 }
 
-- (void)addControllAt:(NSInteger)index
+- (void)addControllAt:(NSInteger)index Channel:(NSInteger)channel
 {
     homePageProtocol page = [self recyclePage];
     if (page)
@@ -204,10 +205,12 @@
     }
     else
     {
-        page = [[HomeListViewController alloc] init];
+        page = [[HomeListViewController alloc] initWithChannel:@(channel)];
         [self addChildViewController:(id)page];
     }
     [_preLoadPages addObject:page];
+    NSUInteger listIndex = [_preLoadPages indexOfObject:page];
+    [_cachePages setObject:@(listIndex) forKey:@(channel)];
     
     page.view.frame = (CGRect){self.scrollView.width * index, 0, self.scrollView.size};
     page.view.autoresizingMask = UIViewAutoresizingFlexibleHeight;
@@ -232,7 +235,7 @@
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 30, kScreenW, kScreenH - 49 - 94)];
     scrollView.pagingEnabled = YES;
     scrollView.delegate = self;
-    scrollView.bounces = NO;
+    scrollView.bounces = YES;
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -247,7 +250,7 @@
 #pragma Mark -UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSLog(@"scrollView contentoffset x is %.1f",scrollView.contentOffset.x);
+
 }
 
 //滚动即将结束
@@ -262,7 +265,8 @@
 #pragma Mark-ItemSelected
 - (void)itemClickWith: (NSString *)btnTitle
 {
-    NSLog(@"self.top is %@",self.listBar.visibleItemList);
+    self.scrollView.contentSize = CGSizeMake(self.listBar.visibleItemList.count * kScreenW, 0);
+    NSLog(@"currentTitle is ********%@",btnTitle);
     NSInteger index = [self.listBar.visibleItemList indexOfObject:btnTitle];
     HomeModel_Theme *cModel; //中间Model
     HomeModel_Theme *lModel; //左边Model

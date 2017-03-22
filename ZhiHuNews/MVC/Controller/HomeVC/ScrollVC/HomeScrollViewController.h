@@ -27,7 +27,7 @@
 
 @property (nonatomic, strong) NSMutableArray *pages;
 
-@property (nonatomic, strong) NSMutableSet *preLoadPages;
+@property (nonatomic, strong) NSMutableArray *preLoadPages;
 
 
 /**

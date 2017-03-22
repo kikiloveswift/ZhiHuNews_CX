@@ -36,6 +36,5 @@
 //右tableView数据源
 @property (nonatomic, strong) NSArray *dataArrRight;
 
-@property (nonatomic, weak) id<HomeScrollViewDelegate> scrollDelegate;
 
 @end

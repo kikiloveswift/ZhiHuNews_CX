@@ -40,7 +40,8 @@
     HomeModel_NewsList *hModel = cell.model;
     
     DetailViewController *detailVC = [[DetailViewController alloc] initWithtag:hModel.id_n];
-    [self.navigationController pushViewController:detailVC animated:YES];
+    NSLog(@"SELF NAV IS %@",self.navigationController);
+    [self.parentViewController.navigationController pushViewController:detailVC animated:YES];
 }
 
 

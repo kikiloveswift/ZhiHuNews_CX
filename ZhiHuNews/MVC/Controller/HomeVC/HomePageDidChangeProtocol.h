@@ -8,17 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol HomeScrollViewDelegate <NSObject>
-
-- (void)homeScrollViewDidStartScroll:(UIScrollView *)scrollView;
-
-- (void)homeScrollViewDidEndScroll:(UIScrollView *)scrollView;
-
-@end
-
 @protocol HomePageDidChangeProtocol <NSObject>
 
-@property (nonatomic, weak) id<HomeScrollViewDelegate> scrollDelegate;
 
 
 /**

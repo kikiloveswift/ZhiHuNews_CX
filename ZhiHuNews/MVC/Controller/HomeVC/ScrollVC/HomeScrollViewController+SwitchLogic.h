@@ -7,6 +7,14 @@
 //  逻辑处理分类
 
 #import "HomeScrollViewController.h"
+
+typedef NS_ENUM(NSInteger, ADDPagesMode)
+{
+    ADDPagesModeLeftMost = 1,   //当前页为最左边的页面
+    ADDPagesModeRightMost = 2,  //当前页为最右的页面
+    ADDPagesModeNormal = 3      //当前页为中间的普通页面
+    
+};
 @class HomeModel_Theme;
 
 /*
@@ -21,12 +29,12 @@
 /**
  处理切换标签逻辑
 
- @param cModle 当前主题Model
+ @param cModel 当前主题Model
  @param lModel 左边主题Model
  @param rModel 右边主题Model
  @param index  当前选中页面坐标 首页index为0
  */
-- (void)sWitchPageWithCurrentPage:(HomeModel_Theme *)cModle
+- (void)sWitchPageWithCurrentPage:(HomeModel_Theme *)cModel
                Left:(HomeModel_Theme *)lModel
               Right:(HomeModel_Theme *)rModel
        CurrentIndex:(NSInteger)index;
