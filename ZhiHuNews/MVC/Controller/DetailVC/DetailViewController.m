@@ -265,6 +265,11 @@ typedef void(^BuildThen)();
         [self disFavNews];
     }
 }
+
+- (void)dealloc
+{
+    NSLog(@"dead");
+}
 - (IBAction)shareAction:(id)sender
 {
     

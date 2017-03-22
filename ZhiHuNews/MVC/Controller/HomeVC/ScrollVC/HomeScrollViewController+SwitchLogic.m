@@ -31,6 +31,21 @@
     
 }
 
+- (void)loadPages
+{
+    for (homePageProtocol vc in self.pages)
+    {
+        vc.scrollDelegate = (id<HomeScrollViewDelegate>)self.parentViewController;
+        [self.view addSubview:vc.view];
+        [vc.view removeFromSuperview];
+        [self addChildViewController:(id)vc];
+    }
+    for (NSInteger i = 0; i < 2; i ++)
+    {
+        [self addControllAt:i];
+    }
+}
+
 - (homePageProtocol)recyclePage
 {
     for (id page in self.pages)
