@@ -20,6 +20,7 @@
     [self setTitle:itemName forState:0];
     [self setTitleColor:UIColorRGB(111.0, 111.0, 111.0, 1) forState:0];
     self.titleLabel.font = [UIFont systemFontOfSize:kItemFont];
+    self.titleLabel.lineBreakMode = NSLineBreakByClipping;
     self.layer.cornerRadius = 4;
     self.layer.borderColor = [UIColorRGB(200.0, 200.0, 200.0, 1) CGColor];
     self.layer.borderWidth = 0.5;

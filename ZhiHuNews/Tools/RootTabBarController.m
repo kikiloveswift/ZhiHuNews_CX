@@ -9,7 +9,7 @@
 #import "RootTabBarController.h"
 #import "RootNavigationController.h"
 
-#import "HomeRootViewController.h"
+#import "HomeScrollViewController.h"
 
 #import "FavViewController.h"
 
@@ -31,7 +31,7 @@
 
 - (void)setItems
 {
-    HomeRootViewController *homePage = [HomeRootViewController new];
+    HomeScrollViewController *homePage = [HomeScrollViewController new];
     RootNavigationController *homeNav = [[RootNavigationController alloc] initWithRootViewController:homePage];
     [self addChildVC:homeNav titile:@"首页" imageName:@"tabhome_normal" selectImg:@"tabhome_red"];
     

@@ -18,13 +18,14 @@
 
 @interface HomeScrollViewController : RootViewController<UIScrollViewDelegate>
 
-@property (nonatomic, strong) UIScrollView *scrollView;
-
-@property (nonatomic, weak) id<HomeScrollViewControllerDelegate> controllDelegate;
-
-@property (nonatomic, assign) NSInteger themeCount;
 
 
+//主题Arr
+@property (nonatomic, strong) NSArray *themeArr;
+
+@property (nonatomic, strong) NSMutableArray *pages;
+
+@property (nonatomic, strong) NSMutableSet *preLoadPages;
 
 
 @end

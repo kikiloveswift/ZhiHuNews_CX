@@ -130,6 +130,9 @@ typedef void(^BuildThen)();
     //初始化imgView
     _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, 220)];
     _imgView.hidden = YES;
+    _imgView.contentMode = UIViewContentModeCenter;
+    _imgView.clipsToBounds = YES;
+    [_imgView setContentScaleFactor:[[UIScreen mainScreen] scale]];
     [_webView.scrollView addSubview:_imgView];
     __weak typeof(self) weakself = self;
     [self requestAPI:^{
